@@ -12,13 +12,17 @@
 		8A99DA4EDA1B82E9F612668D /* Pods_Signup_Sheetz.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6EA1BA90EBA475B107FE8E3 /* Pods_Signup_Sheetz.framework */; };
 		C7CEC1892D4218A500EFECFB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7CEC1882D4218A500EFECFB /* AppDelegate.swift */; };
 		C7CEC18B2D4218A500EFECFB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7CEC18A2D4218A500EFECFB /* SceneDelegate.swift */; };
-		C7CEC18D2D4218A500EFECFB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7CEC18C2D4218A500EFECFB /* ViewController.swift */; };
+		C7CEC18D2D4218A500EFECFB /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7CEC18C2D4218A500EFECFB /* LoginViewController.swift */; };
 		C7CEC1902D4218A500EFECFB /* Base in Resources */ = {isa = PBXBuildFile; fileRef = C7CEC18F2D4218A500EFECFB /* Base */; };
 		C7CEC1922D4218A700EFECFB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C7CEC1912D4218A700EFECFB /* Assets.xcassets */; };
 		C7CEC1952D4218A700EFECFB /* Base in Resources */ = {isa = PBXBuildFile; fileRef = C7CEC1942D4218A700EFECFB /* Base */; };
 		C7CEC1A02D4218A700EFECFB /* Signup_SheetzTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7CEC19F2D4218A700EFECFB /* Signup_SheetzTests.swift */; };
 		C7CEC1AA2D4218A700EFECFB /* Signup_SheetzUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7CEC1A92D4218A700EFECFB /* Signup_SheetzUITests.swift */; };
 		C7CEC1AC2D4218A700EFECFB /* Signup_SheetzUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7CEC1AB2D4218A700EFECFB /* Signup_SheetzUITestsLaunchTests.swift */; };
+		C7CEC1C02D421A0E00EFECFB /* NetworkingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7CEC1BE2D421A0E00EFECFB /* NetworkingManager.swift */; };
+		C7CEC1C12D421A0E00EFECFB /* EndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7CEC1BF2D421A0E00EFECFB /* EndPoint.swift */; };
+		C7CEC1C32D421A7A00EFECFB /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7CEC1C22D421A7A00EFECFB /* Constants.swift */; };
+		C7CEC1C52D421B4100EFECFB /* LocalTexts.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7CEC1C42D421B4100EFECFB /* LocalTexts.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,7 +52,7 @@
 		C7CEC1852D4218A500EFECFB /* Signup Sheetz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Signup Sheetz.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C7CEC1882D4218A500EFECFB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C7CEC18A2D4218A500EFECFB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		C7CEC18C2D4218A500EFECFB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		C7CEC18C2D4218A500EFECFB /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		C7CEC18F2D4218A500EFECFB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C7CEC1912D4218A700EFECFB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C7CEC1942D4218A700EFECFB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -58,6 +62,10 @@
 		C7CEC1A52D4218A700EFECFB /* Signup SheetzUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Signup SheetzUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C7CEC1A92D4218A700EFECFB /* Signup_SheetzUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Signup_SheetzUITests.swift; sourceTree = "<group>"; };
 		C7CEC1AB2D4218A700EFECFB /* Signup_SheetzUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Signup_SheetzUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		C7CEC1BE2D421A0E00EFECFB /* NetworkingManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkingManager.swift; sourceTree = "<group>"; };
+		C7CEC1BF2D421A0E00EFECFB /* EndPoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EndPoint.swift; sourceTree = "<group>"; };
+		C7CEC1C22D421A7A00EFECFB /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		C7CEC1C42D421B4100EFECFB /* LocalTexts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalTexts.swift; sourceTree = "<group>"; };
 		D6EA1BA90EBA475B107FE8E3 /* Pods_Signup_Sheetz.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Signup_Sheetz.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB8EFED6C1487E4D14444513 /* Pods-Signup SheetzTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Signup SheetzTests.debug.xcconfig"; path = "Target Support Files/Pods-Signup SheetzTests/Pods-Signup SheetzTests.debug.xcconfig"; sourceTree = "<group>"; };
 		FBF1BF41E97F8D187127F91B /* Pods-Signup Sheetz.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Signup Sheetz.debug.xcconfig"; path = "Target Support Files/Pods-Signup Sheetz/Pods-Signup Sheetz.debug.xcconfig"; sourceTree = "<group>"; };
@@ -126,9 +134,11 @@
 		C7CEC1872D4218A500EFECFB /* Signup Sheetz */ = {
 			isa = PBXGroup;
 			children = (
-				C7CEC1882D4218A500EFECFB /* AppDelegate.swift */,
-				C7CEC18A2D4218A500EFECFB /* SceneDelegate.swift */,
-				C7CEC18C2D4218A500EFECFB /* ViewController.swift */,
+				C7CEC1BD2D4219E400EFECFB /* Network */,
+				C7CEC1BC2D4219D800EFECFB /* Helpers */,
+				C7CEC1BB2D4219D100EFECFB /* Utilities */,
+				C7CEC1B82D4219AA00EFECFB /* Delegates */,
+				C7CEC1BA2D4219C100EFECFB /* Features */,
 				C7CEC18E2D4218A500EFECFB /* Main.storyboard */,
 				C7CEC1912D4218A700EFECFB /* Assets.xcassets */,
 				C7CEC1932D4218A700EFECFB /* LaunchScreen.storyboard */,
@@ -154,6 +164,56 @@
 			path = "Signup SheetzUITests";
 			sourceTree = "<group>";
 		};
+		C7CEC1B82D4219AA00EFECFB /* Delegates */ = {
+			isa = PBXGroup;
+			children = (
+				C7CEC1882D4218A500EFECFB /* AppDelegate.swift */,
+				C7CEC18A2D4218A500EFECFB /* SceneDelegate.swift */,
+			);
+			path = Delegates;
+			sourceTree = "<group>";
+		};
+		C7CEC1B92D4219B800EFECFB /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				C7CEC18C2D4218A500EFECFB /* LoginViewController.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		C7CEC1BA2D4219C100EFECFB /* Features */ = {
+			isa = PBXGroup;
+			children = (
+				C7CEC1B92D4219B800EFECFB /* Login */,
+			);
+			path = Features;
+			sourceTree = "<group>";
+		};
+		C7CEC1BB2D4219D100EFECFB /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				C7CEC1C22D421A7A00EFECFB /* Constants.swift */,
+				C7CEC1C42D421B4100EFECFB /* LocalTexts.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		C7CEC1BC2D4219D800EFECFB /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		C7CEC1BD2D4219E400EFECFB /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				C7CEC1BF2D421A0E00EFECFB /* EndPoint.swift */,
+				C7CEC1BE2D421A0E00EFECFB /* NetworkingManager.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
 		ECFCEFD47E1090E03FB0EB4C /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -164,7 +224,6 @@
 				FB8EFED6C1487E4D14444513 /* Pods-Signup SheetzTests.debug.xcconfig */,
 				0C375B85A0411A7368F8684B /* Pods-Signup SheetzTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -407,9 +466,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C7CEC18D2D4218A500EFECFB /* ViewController.swift in Sources */,
+				C7CEC18D2D4218A500EFECFB /* LoginViewController.swift in Sources */,
+				C7CEC1C02D421A0E00EFECFB /* NetworkingManager.swift in Sources */,
+				C7CEC1C52D421B4100EFECFB /* LocalTexts.swift in Sources */,
+				C7CEC1C12D421A0E00EFECFB /* EndPoint.swift in Sources */,
 				C7CEC1892D4218A500EFECFB /* AppDelegate.swift in Sources */,
 				C7CEC18B2D4218A500EFECFB /* SceneDelegate.swift in Sources */,
+				C7CEC1C32D421A7A00EFECFB /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
