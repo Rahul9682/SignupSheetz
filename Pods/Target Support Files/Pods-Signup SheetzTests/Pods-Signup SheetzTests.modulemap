@@ -1,0 +1,6 @@
+framework module Pods_Signup_SheetzTests {
+  umbrella header "Pods-Signup SheetzTests-umbrella.h"
+
+  export *
+  module * { export * }
+}

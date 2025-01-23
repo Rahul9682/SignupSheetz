@@ -1,0 +1,6 @@
+framework module Pods_Signup_Sheetz {
+  umbrella header "Pods-Signup Sheetz-umbrella.h"
+
+  export *
+  module * { export * }
+}

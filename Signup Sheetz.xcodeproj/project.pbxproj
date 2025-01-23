@@ -3,122 +3,294 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 77;
+	objectVersion = 56;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		5DEFD724BB4D2F2F6DA5161A /* Pods_Signup_Sheetz_Signup_SheetzUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 054BBF53D34C3EAA7D0E6579 /* Pods_Signup_Sheetz_Signup_SheetzUITests.framework */; };
+		641FCA5C2990F2E8CCE65022 /* Pods_Signup_SheetzTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B8660F0B7E34BFAA598AF01 /* Pods_Signup_SheetzTests.framework */; };
+		8A99DA4EDA1B82E9F612668D /* Pods_Signup_Sheetz.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6EA1BA90EBA475B107FE8E3 /* Pods_Signup_Sheetz.framework */; };
+		C7CEC1892D4218A500EFECFB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7CEC1882D4218A500EFECFB /* AppDelegate.swift */; };
+		C7CEC18B2D4218A500EFECFB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7CEC18A2D4218A500EFECFB /* SceneDelegate.swift */; };
+		C7CEC18D2D4218A500EFECFB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7CEC18C2D4218A500EFECFB /* ViewController.swift */; };
+		C7CEC1902D4218A500EFECFB /* Base in Resources */ = {isa = PBXBuildFile; fileRef = C7CEC18F2D4218A500EFECFB /* Base */; };
+		C7CEC1922D4218A700EFECFB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C7CEC1912D4218A700EFECFB /* Assets.xcassets */; };
+		C7CEC1952D4218A700EFECFB /* Base in Resources */ = {isa = PBXBuildFile; fileRef = C7CEC1942D4218A700EFECFB /* Base */; };
+		C7CEC1A02D4218A700EFECFB /* Signup_SheetzTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7CEC19F2D4218A700EFECFB /* Signup_SheetzTests.swift */; };
+		C7CEC1AA2D4218A700EFECFB /* Signup_SheetzUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7CEC1A92D4218A700EFECFB /* Signup_SheetzUITests.swift */; };
+		C7CEC1AC2D4218A700EFECFB /* Signup_SheetzUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7CEC1AB2D4218A700EFECFB /* Signup_SheetzUITestsLaunchTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		C7CEC19C2D4218A700EFECFB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C7CEC17D2D4218A500EFECFB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C7CEC1842D4218A500EFECFB;
+			remoteInfo = "Signup Sheetz";
+		};
+		C7CEC1A62D4218A700EFECFB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C7CEC17D2D4218A500EFECFB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C7CEC1842D4218A500EFECFB;
+			remoteInfo = "Signup Sheetz";
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
-		C771AB8C2D40DA2B001A5414 /* Signup Sheetz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Signup Sheetz.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		054BBF53D34C3EAA7D0E6579 /* Pods_Signup_Sheetz_Signup_SheetzUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Signup_Sheetz_Signup_SheetzUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		0C375B85A0411A7368F8684B /* Pods-Signup SheetzTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Signup SheetzTests.release.xcconfig"; path = "Target Support Files/Pods-Signup SheetzTests/Pods-Signup SheetzTests.release.xcconfig"; sourceTree = "<group>"; };
+		62ADEB907B455CDEC89B1289 /* Pods-Signup Sheetz-Signup SheetzUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Signup Sheetz-Signup SheetzUITests.debug.xcconfig"; path = "Target Support Files/Pods-Signup Sheetz-Signup SheetzUITests/Pods-Signup Sheetz-Signup SheetzUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		6B8660F0B7E34BFAA598AF01 /* Pods_Signup_SheetzTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Signup_SheetzTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7E1795AA610E83C1C38449D9 /* Pods-Signup Sheetz-Signup SheetzUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Signup Sheetz-Signup SheetzUITests.release.xcconfig"; path = "Target Support Files/Pods-Signup Sheetz-Signup SheetzUITests/Pods-Signup Sheetz-Signup SheetzUITests.release.xcconfig"; sourceTree = "<group>"; };
+		7FC9770539F809ECA7ABB7C5 /* Pods-Signup Sheetz.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Signup Sheetz.release.xcconfig"; path = "Target Support Files/Pods-Signup Sheetz/Pods-Signup Sheetz.release.xcconfig"; sourceTree = "<group>"; };
+		C7CEC1852D4218A500EFECFB /* Signup Sheetz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Signup Sheetz.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C7CEC1882D4218A500EFECFB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		C7CEC18A2D4218A500EFECFB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		C7CEC18C2D4218A500EFECFB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		C7CEC18F2D4218A500EFECFB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		C7CEC1912D4218A700EFECFB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		C7CEC1942D4218A700EFECFB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		C7CEC1962D4218A700EFECFB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C7CEC19B2D4218A700EFECFB /* Signup SheetzTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Signup SheetzTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C7CEC19F2D4218A700EFECFB /* Signup_SheetzTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Signup_SheetzTests.swift; sourceTree = "<group>"; };
+		C7CEC1A52D4218A700EFECFB /* Signup SheetzUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Signup SheetzUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C7CEC1A92D4218A700EFECFB /* Signup_SheetzUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Signup_SheetzUITests.swift; sourceTree = "<group>"; };
+		C7CEC1AB2D4218A700EFECFB /* Signup_SheetzUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Signup_SheetzUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		D6EA1BA90EBA475B107FE8E3 /* Pods_Signup_Sheetz.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Signup_Sheetz.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FB8EFED6C1487E4D14444513 /* Pods-Signup SheetzTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Signup SheetzTests.debug.xcconfig"; path = "Target Support Files/Pods-Signup SheetzTests/Pods-Signup SheetzTests.debug.xcconfig"; sourceTree = "<group>"; };
+		FBF1BF41E97F8D187127F91B /* Pods-Signup Sheetz.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Signup Sheetz.debug.xcconfig"; path = "Target Support Files/Pods-Signup Sheetz/Pods-Signup Sheetz.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
-/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
-		C771AB9E2D40DA2D001A5414 /* Exceptions for "Signup Sheetz" folder in "Signup Sheetz" target */ = {
-			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
-			membershipExceptions = (
-				Info.plist,
-			);
-			target = C771AB8B2D40DA2B001A5414 /* Signup Sheetz */;
-		};
-/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
-
-/* Begin PBXFileSystemSynchronizedRootGroup section */
-		C771AB8E2D40DA2B001A5414 /* Signup Sheetz */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			exceptions = (
-				C771AB9E2D40DA2D001A5414 /* Exceptions for "Signup Sheetz" folder in "Signup Sheetz" target */,
-			);
-			path = "Signup Sheetz";
-			sourceTree = "<group>";
-		};
-/* End PBXFileSystemSynchronizedRootGroup section */
-
 /* Begin PBXFrameworksBuildPhase section */
-		C771AB892D40DA2B001A5414 /* Frameworks */ = {
+		C7CEC1822D4218A500EFECFB /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8A99DA4EDA1B82E9F612668D /* Pods_Signup_Sheetz.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C7CEC1982D4218A700EFECFB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				641FCA5C2990F2E8CCE65022 /* Pods_Signup_SheetzTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C7CEC1A22D4218A700EFECFB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5DEFD724BB4D2F2F6DA5161A /* Pods_Signup_Sheetz_Signup_SheetzUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		C771AB832D40DA2B001A5414 = {
+		B03ECC6EF5F1567B0574E6BA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				C771AB8E2D40DA2B001A5414 /* Signup Sheetz */,
-				C771AB8D2D40DA2B001A5414 /* Products */,
+				D6EA1BA90EBA475B107FE8E3 /* Pods_Signup_Sheetz.framework */,
+				054BBF53D34C3EAA7D0E6579 /* Pods_Signup_Sheetz_Signup_SheetzUITests.framework */,
+				6B8660F0B7E34BFAA598AF01 /* Pods_Signup_SheetzTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C7CEC17C2D4218A500EFECFB = {
+			isa = PBXGroup;
+			children = (
+				C7CEC1872D4218A500EFECFB /* Signup Sheetz */,
+				C7CEC19E2D4218A700EFECFB /* Signup SheetzTests */,
+				C7CEC1A82D4218A700EFECFB /* Signup SheetzUITests */,
+				C7CEC1862D4218A500EFECFB /* Products */,
+				ECFCEFD47E1090E03FB0EB4C /* Pods */,
+				B03ECC6EF5F1567B0574E6BA /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
-		C771AB8D2D40DA2B001A5414 /* Products */ = {
+		C7CEC1862D4218A500EFECFB /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				C771AB8C2D40DA2B001A5414 /* Signup Sheetz.app */,
+				C7CEC1852D4218A500EFECFB /* Signup Sheetz.app */,
+				C7CEC19B2D4218A700EFECFB /* Signup SheetzTests.xctest */,
+				C7CEC1A52D4218A700EFECFB /* Signup SheetzUITests.xctest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		C7CEC1872D4218A500EFECFB /* Signup Sheetz */ = {
+			isa = PBXGroup;
+			children = (
+				C7CEC1882D4218A500EFECFB /* AppDelegate.swift */,
+				C7CEC18A2D4218A500EFECFB /* SceneDelegate.swift */,
+				C7CEC18C2D4218A500EFECFB /* ViewController.swift */,
+				C7CEC18E2D4218A500EFECFB /* Main.storyboard */,
+				C7CEC1912D4218A700EFECFB /* Assets.xcassets */,
+				C7CEC1932D4218A700EFECFB /* LaunchScreen.storyboard */,
+				C7CEC1962D4218A700EFECFB /* Info.plist */,
+			);
+			path = "Signup Sheetz";
+			sourceTree = "<group>";
+		};
+		C7CEC19E2D4218A700EFECFB /* Signup SheetzTests */ = {
+			isa = PBXGroup;
+			children = (
+				C7CEC19F2D4218A700EFECFB /* Signup_SheetzTests.swift */,
+			);
+			path = "Signup SheetzTests";
+			sourceTree = "<group>";
+		};
+		C7CEC1A82D4218A700EFECFB /* Signup SheetzUITests */ = {
+			isa = PBXGroup;
+			children = (
+				C7CEC1A92D4218A700EFECFB /* Signup_SheetzUITests.swift */,
+				C7CEC1AB2D4218A700EFECFB /* Signup_SheetzUITestsLaunchTests.swift */,
+			);
+			path = "Signup SheetzUITests";
+			sourceTree = "<group>";
+		};
+		ECFCEFD47E1090E03FB0EB4C /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				FBF1BF41E97F8D187127F91B /* Pods-Signup Sheetz.debug.xcconfig */,
+				7FC9770539F809ECA7ABB7C5 /* Pods-Signup Sheetz.release.xcconfig */,
+				62ADEB907B455CDEC89B1289 /* Pods-Signup Sheetz-Signup SheetzUITests.debug.xcconfig */,
+				7E1795AA610E83C1C38449D9 /* Pods-Signup Sheetz-Signup SheetzUITests.release.xcconfig */,
+				FB8EFED6C1487E4D14444513 /* Pods-Signup SheetzTests.debug.xcconfig */,
+				0C375B85A0411A7368F8684B /* Pods-Signup SheetzTests.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		C771AB8B2D40DA2B001A5414 /* Signup Sheetz */ = {
+		C7CEC1842D4218A500EFECFB /* Signup Sheetz */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = C771AB9F2D40DA2D001A5414 /* Build configuration list for PBXNativeTarget "Signup Sheetz" */;
+			buildConfigurationList = C7CEC1AF2D4218A700EFECFB /* Build configuration list for PBXNativeTarget "Signup Sheetz" */;
 			buildPhases = (
-				C771AB882D40DA2B001A5414 /* Sources */,
-				C771AB892D40DA2B001A5414 /* Frameworks */,
-				C771AB8A2D40DA2B001A5414 /* Resources */,
+				4CD140D2FF3B9213DC8208D5 /* [CP] Check Pods Manifest.lock */,
+				C7CEC1812D4218A500EFECFB /* Sources */,
+				C7CEC1822D4218A500EFECFB /* Frameworks */,
+				C7CEC1832D4218A500EFECFB /* Resources */,
+				19FD5C54059E602CB2B12263 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			fileSystemSynchronizedGroups = (
-				C771AB8E2D40DA2B001A5414 /* Signup Sheetz */,
-			);
 			name = "Signup Sheetz";
-			packageProductDependencies = (
-			);
 			productName = "Signup Sheetz";
-			productReference = C771AB8C2D40DA2B001A5414 /* Signup Sheetz.app */;
+			productReference = C7CEC1852D4218A500EFECFB /* Signup Sheetz.app */;
 			productType = "com.apple.product-type.application";
+		};
+		C7CEC19A2D4218A700EFECFB /* Signup SheetzTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C7CEC1B22D4218A700EFECFB /* Build configuration list for PBXNativeTarget "Signup SheetzTests" */;
+			buildPhases = (
+				C7E32AFDA06A948C1BB00D9B /* [CP] Check Pods Manifest.lock */,
+				C7CEC1972D4218A700EFECFB /* Sources */,
+				C7CEC1982D4218A700EFECFB /* Frameworks */,
+				C7CEC1992D4218A700EFECFB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C7CEC19D2D4218A700EFECFB /* PBXTargetDependency */,
+			);
+			name = "Signup SheetzTests";
+			productName = "Signup SheetzTests";
+			productReference = C7CEC19B2D4218A700EFECFB /* Signup SheetzTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		C7CEC1A42D4218A700EFECFB /* Signup SheetzUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C7CEC1B52D4218A700EFECFB /* Build configuration list for PBXNativeTarget "Signup SheetzUITests" */;
+			buildPhases = (
+				3D452B0C25B1B44F9F6FBEA5 /* [CP] Check Pods Manifest.lock */,
+				C7CEC1A12D4218A700EFECFB /* Sources */,
+				C7CEC1A22D4218A700EFECFB /* Frameworks */,
+				C7CEC1A32D4218A700EFECFB /* Resources */,
+				CF8B39B5AE6165573D68884D /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C7CEC1A72D4218A700EFECFB /* PBXTargetDependency */,
+			);
+			name = "Signup SheetzUITests";
+			productName = "Signup SheetzUITests";
+			productReference = C7CEC1A52D4218A700EFECFB /* Signup SheetzUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		C771AB842D40DA2B001A5414 /* Project object */ = {
+		C7CEC17D2D4218A500EFECFB /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1610;
-				LastUpgradeCheck = 1610;
+				LastSwiftUpdateCheck = 1540;
+				LastUpgradeCheck = 1540;
 				TargetAttributes = {
-					C771AB8B2D40DA2B001A5414 = {
-						CreatedOnToolsVersion = 16.1;
+					C7CEC1842D4218A500EFECFB = {
+						CreatedOnToolsVersion = 15.4;
+					};
+					C7CEC19A2D4218A700EFECFB = {
+						CreatedOnToolsVersion = 15.4;
+						TestTargetID = C7CEC1842D4218A500EFECFB;
+					};
+					C7CEC1A42D4218A700EFECFB = {
+						CreatedOnToolsVersion = 15.4;
+						TestTargetID = C7CEC1842D4218A500EFECFB;
 					};
 				};
 			};
-			buildConfigurationList = C771AB872D40DA2B001A5414 /* Build configuration list for PBXProject "Signup Sheetz" */;
+			buildConfigurationList = C7CEC1802D4218A500EFECFB /* Build configuration list for PBXProject "Signup Sheetz" */;
+			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 				Base,
 			);
-			mainGroup = C771AB832D40DA2B001A5414;
-			minimizedProjectReferenceProxies = 1;
-			preferredProjectObjectVersion = 77;
-			productRefGroup = C771AB8D2D40DA2B001A5414 /* Products */;
+			mainGroup = C7CEC17C2D4218A500EFECFB;
+			productRefGroup = C7CEC1862D4218A500EFECFB /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				C771AB8B2D40DA2B001A5414 /* Signup Sheetz */,
+				C7CEC1842D4218A500EFECFB /* Signup Sheetz */,
+				C7CEC19A2D4218A700EFECFB /* Signup SheetzTests */,
+				C7CEC1A42D4218A700EFECFB /* Signup SheetzUITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		C771AB8A2D40DA2B001A5414 /* Resources */ = {
+		C7CEC1832D4218A500EFECFB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C7CEC1922D4218A700EFECFB /* Assets.xcassets in Resources */,
+				C7CEC1952D4218A700EFECFB /* Base in Resources */,
+				C7CEC1902D4218A500EFECFB /* Base in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C7CEC1992D4218A700EFECFB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C7CEC1A32D4218A700EFECFB /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -127,72 +299,173 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		19FD5C54059E602CB2B12263 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Signup Sheetz/Pods-Signup Sheetz-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Signup Sheetz/Pods-Signup Sheetz-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Signup Sheetz/Pods-Signup Sheetz-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3D452B0C25B1B44F9F6FBEA5 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Signup Sheetz-Signup SheetzUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4CD140D2FF3B9213DC8208D5 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Signup Sheetz-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C7E32AFDA06A948C1BB00D9B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Signup SheetzTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CF8B39B5AE6165573D68884D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Signup Sheetz-Signup SheetzUITests/Pods-Signup Sheetz-Signup SheetzUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Signup Sheetz-Signup SheetzUITests/Pods-Signup Sheetz-Signup SheetzUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Signup Sheetz-Signup SheetzUITests/Pods-Signup Sheetz-Signup SheetzUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
-		C771AB882D40DA2B001A5414 /* Sources */ = {
+		C7CEC1812D4218A500EFECFB /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C7CEC18D2D4218A500EFECFB /* ViewController.swift in Sources */,
+				C7CEC1892D4218A500EFECFB /* AppDelegate.swift in Sources */,
+				C7CEC18B2D4218A500EFECFB /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C7CEC1972D4218A700EFECFB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C7CEC1A02D4218A700EFECFB /* Signup_SheetzTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C7CEC1A12D4218A700EFECFB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C7CEC1AA2D4218A700EFECFB /* Signup_SheetzUITests.swift in Sources */,
+				C7CEC1AC2D4218A700EFECFB /* Signup_SheetzUITestsLaunchTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		C7CEC19D2D4218A700EFECFB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C7CEC1842D4218A500EFECFB /* Signup Sheetz */;
+			targetProxy = C7CEC19C2D4218A700EFECFB /* PBXContainerItemProxy */;
+		};
+		C7CEC1A72D4218A700EFECFB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C7CEC1842D4218A500EFECFB /* Signup Sheetz */;
+			targetProxy = C7CEC1A62D4218A700EFECFB /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		C7CEC18E2D4218A500EFECFB /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C7CEC18F2D4218A500EFECFB /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		C7CEC1932D4218A700EFECFB /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C7CEC1942D4218A700EFECFB /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
 /* Begin XCBuildConfiguration section */
-		C771ABA02D40DA2D001A5414 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "Signup Sheetz/Info.plist";
-				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.signupsheetz.Signup-Sheetz";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
-		C771ABA12D40DA2D001A5414 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "Signup Sheetz/Info.plist";
-				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.signupsheetz.Signup-Sheetz";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Release;
-		};
-		C771ABA22D40DA2D001A5414 /* Debug */ = {
+		C7CEC1AD2D4218A700EFECFB /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -244,7 +517,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 18.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -255,7 +528,7 @@
 			};
 			name = Debug;
 		};
-		C771ABA32D40DA2D001A5414 /* Release */ = {
+		C7CEC1AE2D4218A700EFECFB /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -301,7 +574,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 18.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
@@ -311,28 +584,184 @@
 			};
 			name = Release;
 		};
+		C7CEC1B02D4218A700EFECFB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = FBF1BF41E97F8D187127F91B /* Pods-Signup Sheetz.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = RVH9399KJ5;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Signup Sheetz/Info.plist";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.signupsheetz.Signup-Sheetz";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		C7CEC1B12D4218A700EFECFB /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7FC9770539F809ECA7ABB7C5 /* Pods-Signup Sheetz.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = RVH9399KJ5;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Signup Sheetz/Info.plist";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.signupsheetz.Signup-Sheetz";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		C7CEC1B32D4218A700EFECFB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = FB8EFED6C1487E4D14444513 /* Pods-Signup SheetzTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = RVH9399KJ5;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.signupsheetz.Signup-SheetzTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Signup Sheetz.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Signup Sheetz";
+			};
+			name = Debug;
+		};
+		C7CEC1B42D4218A700EFECFB /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0C375B85A0411A7368F8684B /* Pods-Signup SheetzTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = RVH9399KJ5;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.signupsheetz.Signup-SheetzTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Signup Sheetz.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Signup Sheetz";
+			};
+			name = Release;
+		};
+		C7CEC1B62D4218A700EFECFB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 62ADEB907B455CDEC89B1289 /* Pods-Signup Sheetz-Signup SheetzUITests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = RVH9399KJ5;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.signupsheetz.Signup-SheetzUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Signup Sheetz";
+			};
+			name = Debug;
+		};
+		C7CEC1B72D4218A700EFECFB /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7E1795AA610E83C1C38449D9 /* Pods-Signup Sheetz-Signup SheetzUITests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = RVH9399KJ5;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.signupsheetz.Signup-SheetzUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Signup Sheetz";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		C771AB872D40DA2B001A5414 /* Build configuration list for PBXProject "Signup Sheetz" */ = {
+		C7CEC1802D4218A500EFECFB /* Build configuration list for PBXProject "Signup Sheetz" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				C771ABA22D40DA2D001A5414 /* Debug */,
-				C771ABA32D40DA2D001A5414 /* Release */,
+				C7CEC1AD2D4218A700EFECFB /* Debug */,
+				C7CEC1AE2D4218A700EFECFB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		C771AB9F2D40DA2D001A5414 /* Build configuration list for PBXNativeTarget "Signup Sheetz" */ = {
+		C7CEC1AF2D4218A700EFECFB /* Build configuration list for PBXNativeTarget "Signup Sheetz" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				C771ABA02D40DA2D001A5414 /* Debug */,
-				C771ABA12D40DA2D001A5414 /* Release */,
+				C7CEC1B02D4218A700EFECFB /* Debug */,
+				C7CEC1B12D4218A700EFECFB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C7CEC1B22D4218A700EFECFB /* Build configuration list for PBXNativeTarget "Signup SheetzTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C7CEC1B32D4218A700EFECFB /* Debug */,
+				C7CEC1B42D4218A700EFECFB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C7CEC1B52D4218A700EFECFB /* Build configuration list for PBXNativeTarget "Signup SheetzUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C7CEC1B62D4218A700EFECFB /* Debug */,
+				C7CEC1B72D4218A700EFECFB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = C771AB842D40DA2B001A5414 /* Project object */;
+	rootObject = C7CEC17D2D4218A500EFECFB /* Project object */;
 }
