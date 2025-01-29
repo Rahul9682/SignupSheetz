@@ -6,41 +6,82 @@
 //
 
 import Foundation
-
-
 import Combine
-import Foundation
 
-class AuthViewModel {
-    @Published var apiResponse: APIResponse?
-    @Published var errorMessage: String?
+class RegisterViewModel {
     
+    //MARK: PROPERTIES
+    @Published var firstName: String
+    @Published var lastName: String
+    @Published var email: String
+    @Published var password: String
+    @Published var phone: String
+    @Published var organizationType: String
+    @Published var confirmPassword: String
+    
+    @Published var isValidEmail: Bool
+    @Published var isValidPassword: Bool
+    @Published var isValidConfirmPassword: Bool
+    
+    private var networkingError: NetworkingError?
+    private var registerDataService: RegisterDataService
+    private var registerValidationError: ValidationError?
     private var cancellables = Set<AnyCancellable>()
+    private var cancellable: Set<AnyCancellable> = Set<AnyCancellable>()
     
-    func registerUser(user: User, completion: @escaping (Result<APIResponse, Error>) -> Void) {
-        let endpoint = EndPoint(path: "signupsheetz/api/signup")
-        let body: [String: Any] = [
-            "first_name": user.firstName,
-            "last_name": user.lastName,
-            "phone_number": user.phoneNumber,
-            "email": user.email,
-            "password": user.password,
-            "work_type": user.workType
-        ]
+    //MARK: INITIALIZER
+    init(signupData: SignupData? = nil) {
+        self.firstName = signupData?.firstName ?? ""
+        self.lastName = signupData?.lastName ?? ""
+        self.email = signupData?.email ?? ""
+        self.password = signupData?.password ?? ""
+        self.confirmPassword = signupData?.confirmPassword ?? ""
+        self.phone = signupData?.phone ?? ""
+        self.organizationType = signupData?.organizationType ?? ""
         
-        NetworkingManager.downloadDataWith(endPoint: endpoint, httpMethod: .post, body: body)
-            .decode(type: APIResponse.self, decoder: JSONDecoder())
-            .receive(on: DispatchQueue.main)
-            .sink(receiveCompletion: { completionResult in
-                switch completionResult {
-                case .finished:
-                    break
-                case .failure(let error):
-                    completion(.failure(error))
+        self.isValidEmail = (signupData?.email ?? "").isValidEmail()
+        self.isValidPassword = (signupData?.password ?? "").isValidPassword()
+        self.isValidConfirmPassword = (signupData?.confirmPassword ?? "").isValidConfirmPassword(with: (signupData?.password ?? ""))
+        
+        registerDataService = RegisterDataService(_signupData: signupData)
+    }
+}
+
+//MARK: - API INTEGRATION
+extension RegisterViewModel {
+    func userRegister(completionHandler: @escaping ((Result<String, Error>) -> ())) {
+        DispatchQueue.main.async { Spinner.start() }
+        registerDataService.$registerModel
+            .sink { [weak self] receivedValue in
+                guard let self = self else { return }
+                if let data = receivedValue {
+                    DispatchQueue.main.async { Spinner.stop() }
+                    if let success = data.success {
+                        if success {
+                            // SaveAuthentication.saveUserData(with: data.data)
+                            completionHandler(.success(data.message ?? "N/A"))
+                        } else {
+                            self.networkingError = .wrongStatusCodeMessage(message: data.message ?? "")
+                            if let networkingError = self.networkingError {
+                                completionHandler(.failure(networkingError))
+                            }
+                        }
+                    }
+                } else {
+                    if let networkingError = self.networkingError {
+                        DispatchQueue.main.async { Spinner.stop() }
+                        completionHandler(.failure(networkingError))
+                    }
                 }
-            }, receiveValue: { response in
-                completion(.success(response))
-            })
-            .store(in: &cancellables)
+            }.store(in: &cancellables)
+        registerDataService.userRegister { result in
+            DispatchQueue.main.async { Spinner.stop() }
+            switch result {
+            case .success(let message):
+                print(message)
+            case .failure(let error):
+                completionHandler(.failure(error))
+            }
+        }
     }
 }

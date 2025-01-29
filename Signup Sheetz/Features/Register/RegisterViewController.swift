@@ -13,7 +13,7 @@ class RegisterViewController: UIViewController {
     @IBOutlet weak var signUpButtonView: UIView!
     @IBOutlet weak var alreadyHaveAccountLabel: UILabel!
     
-    private let viewModel = AuthViewModel() // ViewModel instance
+    private var viewModel = RegisterViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -66,33 +66,7 @@ class RegisterViewController: UIViewController {
     
   
     @IBAction func signUpAction(_ sender: Any) {
-        signUpTapped()
-    }
-    
-    
-     func signUpTapped() {
-         guard let firstName = firstNametext.textField.text?.trimmingCharacters(in: .whitespacesAndNewlines),
-              let lastName = lastNametext.textField.text?.trimmingCharacters(in: .whitespacesAndNewlines),
-              let phoneNumber = phoneNumbertext.textField.text?.trimmingCharacters(in: .whitespacesAndNewlines),
-              let email = emailtext.textField.text?.trimmingCharacters(in: .whitespacesAndNewlines),
-              let password = passwordtext.textField.text?.trimmingCharacters(in: .whitespacesAndNewlines),
-              let workType = workTypetext.textField.text?.trimmingCharacters(in: .whitespacesAndNewlines) else {
-            showAlert(message: "Please fill all fields")
-            return
-        }
-        
-        let user = User(firstName: firstName, lastName: lastName, phoneNumber: phoneNumber, email: email, password: password, workType: workType)
-        
-        viewModel.registerUser(user: user) { result in
-            DispatchQueue.main.async {
-                switch result {
-                case .success(let response):
-                    self.showAlert(message: "✅ \(response.message)")
-                case .failure(let error):
-                    self.showAlert(message: "❌ Error: \(error.localizedDescription)")
-                }
-            }
-        }
+        userRegister()
     }
     
     // MARK: - Helper Method
@@ -100,5 +74,36 @@ class RegisterViewController: UIViewController {
         let alert = UIAlertController(title: "Signup", message: message, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "OK", style: .default))
         present(alert, animated: true)
+    }
+}
+
+//MARK: - VIEWMODEL INTERACTIONS
+extension RegisterViewController {
+    private func userRegister() {
+        var signupData: SignupData?
+        signupData?.firstName = firstNametext.textField.text?.trimmingCharacters(in: .whitespacesAndNewlines)
+        signupData?.lastName = lastNametext.textField.text?.trimmingCharacters(in: .whitespacesAndNewlines)
+        signupData?.email = emailtext.textField.text?.trimmingCharacters(in: .whitespacesAndNewlines)
+        signupData?.phone = phoneNumbertext.textField.text?.trimmingCharacters(in: .whitespacesAndNewlines)
+        signupData?.password = passwordtext.textField.text?.trimmingCharacters(in: .whitespacesAndNewlines)
+        signupData?.confirmPassword = passwordtext.textField.text?.trimmingCharacters(in: .whitespacesAndNewlines)
+//        signupData?.organizationType = firstNametext.textField.text?.trimmingCharacters(in: .whitespacesAndNewlines)
+        
+        viewModel = RegisterViewModel(signupData: signupData)
+        self.viewModel.userRegister { result in
+            switch result {
+            case .success(let message):
+                print(message)
+                //                self.showToast(with: message, toastType: .success)
+                //                if let successDelegateToRootVC = self.successDelegateToRootVC {
+                //                    successDelegateToRootVC.onSuccess(with: self.index)
+                //                }
+                //                self.view.window?.rootViewController?.dismiss(animated: true, completion: nil)
+            case .failure(let error):
+                break
+                //                self.showToast(with: error.localizedDescription, toastType: .error)
+            }
+        }
+        
     }
 }

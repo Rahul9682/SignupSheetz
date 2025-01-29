@@ -7,19 +7,26 @@
 
 import Foundation
 
-
-import Foundation
-
-struct User: Codable {
-    let firstName: String
-    let lastName: String
-    let phoneNumber: String
-    let email: String
-    let password: String
-    let workType: String
+class RegisterModel: Codable {
+    let success: Bool?
+    let status: Int?
+    let message: String?
+    let data: RegisterData?
 }
 
-struct APIResponse: Codable {
-    let status: Bool
-    let message: String
+class RegisterData: Codable {
+    let token, firstName, lastName, organizationType: String?
+    let phone: String?
+
+    enum CodingKeys: String, CodingKey {
+        case token
+        case firstName = "first_name"
+        case lastName = "last_name"
+        case organizationType = "organization_type"
+        case phone
+    }
+}
+
+struct SignupData {
+    var firstName, lastName, organizationType,  email, phone, password, confirmPassword: String?
 }
