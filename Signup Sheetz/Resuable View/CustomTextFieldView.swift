@@ -33,5 +33,7 @@ class CustomTextFieldView: UIView {
         textField.placeholder = placeholder
         textField.font = FontManager.customFont(weight: fontWeight, size: fontSize)
     }
+    
+   
 
 }
