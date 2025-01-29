@@ -10,11 +10,13 @@ import UIKit
 
 @IBDesignable
 class CustomTextFieldView: UIView {
-
-    // MARK: - Outlets
+    
     @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var iconImageView: UIImageView!
     @IBOutlet weak var textField: UITextField!
+    
+    var delegateTextField: DelegateTextField?
+    var delegateTextfieldType: TextFieldType?
     
     override class func awakeFromNib() {
         super.awakeFromNib()
@@ -22,7 +24,6 @@ class CustomTextFieldView: UIView {
     }
     
      func setupView() {
-        // Add rounded border
         containerView.layer.cornerRadius = 10
         containerView.layer.borderWidth = 1
         containerView.layer.borderColor = UIColor.lightGray.cgColor
@@ -34,6 +35,10 @@ class CustomTextFieldView: UIView {
         textField.font = FontManager.customFont(weight: fontWeight, size: fontSize)
     }
     
-   
-
+    @IBAction func searchTextFieldAction(_ sender: UITextField) {
+        let textfieldText = textField.text?.trimmingCharacters(in: .whitespacesAndNewlines) ?? ""
+        if let delegateTextField = delegateTextField, let type = delegateTextfieldType {
+            delegateTextField.didChangeTextField(with: textfieldText, and: type)
+        }
+    }
 }

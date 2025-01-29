@@ -19,21 +19,26 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var appleSignInView: UIView!
     @IBOutlet weak var googleSignInView: UIView!
     
+    var email = ""
+    var password = ""
+    
     
     //MARK: - Life-Cycle-Methods
     override func viewDidLoad() {
         super.viewDidLoad()
         confiqureUI()
-        configureEmailView(view: emailView,icon: UIImage.emailIcon,placeholder: "abc@email.com")
-        configureEmailView(view: passwordView,icon: UIImage.passwordIcon,placeholder: "your password")
+        configureTextFieldView(view: emailView, icon: UIImage.emailIcon, placeholder: "abc@email.com", textfieldType: .loginEmail)
+        configureTextFieldView(view: passwordView, icon: UIImage.passwordIcon, placeholder: "your password", textfieldType: .loginPassword)
         
     }
     
-    private func configureEmailView(view: CustomTextFieldView, icon: UIImage?, placeholder: String) {
+    private func configureTextFieldView(view: CustomTextFieldView, icon: UIImage?, placeholder: String, textfieldType: TextFieldType) {
         let textFieldView = Bundle.main.loadNibNamed("CustomTextFieldView", owner: self, options: nil)?.first as? CustomTextFieldView
         textFieldView?.autoresizingMask = [.flexibleHeight, .flexibleWidth]
         textFieldView?.setupView()
         textFieldView?.frame = view.bounds
+        textFieldView?.delegateTextfieldType = textfieldType
+        textFieldView?.delegateTextField = self
         textFieldView?.configure(icon: icon, placeholder: placeholder,fontWeight: .light, fontSize: 14)
         view.addSubview(textFieldView!)
     }
@@ -70,3 +75,17 @@ class LoginViewController: UIViewController {
     
 }
 
+extension LoginViewController: DelegateTextField {
+    func didChangeTextField(with text: String, and type: TextFieldType) {
+        switch type {
+        case .loginEmail:
+            self.email = text
+            break
+        case .loginPassword:
+            self.password = text
+            break
+        default:
+            break
+        }
+    }
+}

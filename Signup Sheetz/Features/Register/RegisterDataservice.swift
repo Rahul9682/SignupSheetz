@@ -13,20 +13,20 @@ class RegisterDataService {
     @Published var registerModel: RegisterModel?
     var cancellables: AnyCancellable?
     
-    let signupData: SignupData?
+    var signupData = SignupData()
     
-    init(_signupData: SignupData?) {
+    init(_signupData: SignupData) {
         self.signupData = _signupData
     }
     
     func userRegister(completionHandler: @escaping ((Result<String, Error>) -> ())) {
         let body = [
-            "email": signupData?.email,
-            "phone": signupData?.phone,
-            "password": signupData?.password,
-            "first_name": signupData?.firstName,
-            "last_name": signupData?.lastName,
-            "organization_type": signupData?.organizationType,
+            "email": signupData.email ?? "",
+            "phone": signupData.phone ?? "",
+            "password": signupData.password ?? "",
+            "first_name": signupData.firstName ?? "",
+            "last_name": signupData.lastName ?? "",
+            "organization_type": signupData.organizationType ?? "",
         ] as [String : Any]
         print("request body: \(body)")
         cancellables = NetworkingManager.downloadDataWith(endPoint: .signup, httpMethod: .post, body: body)

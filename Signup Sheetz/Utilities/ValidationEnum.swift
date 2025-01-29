@@ -34,3 +34,8 @@ enum ValidationError: LocalizedError, Error {
         }
     }
 }
+
+enum TextFieldType {
+    case loginEmail, loginPassword
+    case signupFirstName, signupLastName, signupEmail, signupPhoneNumber, signupPassword, signupWorkType
+}

@@ -17,14 +17,12 @@ class RegisterViewModel {
     @Published var password: String
     @Published var phone: String
     @Published var organizationType: String
-    @Published var confirmPassword: String
     
     @Published var isValidEmail: Bool
     @Published var isValidPassword: Bool
-    @Published var isValidConfirmPassword: Bool
     
     private var networkingError: NetworkingError?
-    private var registerDataService: RegisterDataService
+    private var registerDataService: RegisterDataService?
     private var registerValidationError: ValidationError?
     private var cancellables = Set<AnyCancellable>()
     private var cancellable: Set<AnyCancellable> = Set<AnyCancellable>()
@@ -35,15 +33,15 @@ class RegisterViewModel {
         self.lastName = signupData?.lastName ?? ""
         self.email = signupData?.email ?? ""
         self.password = signupData?.password ?? ""
-        self.confirmPassword = signupData?.confirmPassword ?? ""
         self.phone = signupData?.phone ?? ""
         self.organizationType = signupData?.organizationType ?? ""
         
         self.isValidEmail = (signupData?.email ?? "").isValidEmail()
         self.isValidPassword = (signupData?.password ?? "").isValidPassword()
-        self.isValidConfirmPassword = (signupData?.confirmPassword ?? "").isValidConfirmPassword(with: (signupData?.password ?? ""))
         
-        registerDataService = RegisterDataService(_signupData: signupData)
+        if let signupData = signupData {
+            registerDataService = RegisterDataService(_signupData: signupData)
+        }
     }
 }
 
@@ -51,7 +49,7 @@ class RegisterViewModel {
 extension RegisterViewModel {
     func userRegister(completionHandler: @escaping ((Result<String, Error>) -> ())) {
         DispatchQueue.main.async { Spinner.start() }
-        registerDataService.$registerModel
+        registerDataService?.$registerModel
             .sink { [weak self] receivedValue in
                 guard let self = self else { return }
                 if let data = receivedValue {
@@ -74,7 +72,7 @@ extension RegisterViewModel {
                     }
                 }
             }.store(in: &cancellables)
-        registerDataService.userRegister { result in
+        registerDataService?.userRegister { result in
             DispatchQueue.main.async { Spinner.stop() }
             switch result {
             case .success(let message):

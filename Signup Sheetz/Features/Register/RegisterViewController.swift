@@ -1,3 +1,10 @@
+//
+//  ViewController.swift
+//  Signup Sheetz
+//
+//  Created by Mohammad Kaif on 23/01/25.
+//
+
 import UIKit
 
 class RegisterViewController: UIViewController {
@@ -14,6 +21,12 @@ class RegisterViewController: UIViewController {
     @IBOutlet weak var alreadyHaveAccountLabel: UILabel!
     
     private var viewModel = RegisterViewModel()
+    var firstName = ""
+    var lastName = ""
+    var workType = ""
+    var email = ""
+    var phone = ""
+    var password = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,12 +39,12 @@ class RegisterViewController: UIViewController {
         pageTitleLabel.text = "Sign Up"
         pageTitleLabel.font = FontManager.customFont(weight: .medium, size: 24)
 
-        configureTextField(firstNametext, icon: UIImage.profileIcon, placeholder: "First Name")
-        configureTextField(lastNametext, icon: UIImage.profileIcon, placeholder: "Last Name")
-        configureTextField(phoneNumbertext, icon: UIImage.phone, placeholder: "Phone Number")
-        configureTextField(emailtext, icon: UIImage.mail, placeholder: "abc@email.com")
-        configureTextField(passwordtext, icon: UIImage.passwordIcon, placeholder: "Password")
-        configureTextField(workTypetext, icon: UIImage.work, placeholder: "Select Individual / Organization")
+        configureTextField(firstNametext, icon: UIImage.profileIcon, placeholder: "First Name", textfieldType: .signupFirstName)
+        configureTextField(lastNametext, icon: UIImage.profileIcon, placeholder: "Last Name", textfieldType: .signupLastName)
+        configureTextField(phoneNumbertext, icon: UIImage.phone, placeholder: "Phone Number", textfieldType: .signupPhoneNumber)
+        configureTextField(emailtext, icon: UIImage.mail, placeholder: "abc@email.com", textfieldType: .signupEmail)
+        configureTextField(passwordtext, icon: UIImage.passwordIcon, placeholder: "Password", textfieldType: .signupPassword)
+        configureTextField(workTypetext, icon: UIImage.work, placeholder: "Select Individual / Organization", textfieldType: .signupWorkType)
         
         signUpButtonView.layer.cornerRadius = 16
         signUpButtonView.dropShadow()
@@ -40,11 +53,13 @@ class RegisterViewController: UIViewController {
         setupSignInLabel()
     }
     
-    func configureTextField(_ view: CustomTextFieldView, icon: UIImage?, placeholder: String) {
+    func configureTextField(_ view: CustomTextFieldView, icon: UIImage?, placeholder: String, textfieldType: TextFieldType) {
         let textFieldView = Bundle.main.loadNibNamed("CustomTextFieldView", owner: self, options: nil)?.first as? CustomTextFieldView
         textFieldView?.autoresizingMask = [.flexibleHeight, .flexibleWidth]
         textFieldView?.setupView()
         textFieldView?.frame = view.bounds
+        textFieldView?.delegateTextfieldType = textfieldType
+        textFieldView?.delegateTextField = self
         textFieldView?.configure(icon: icon, placeholder: placeholder, fontWeight: .light, fontSize: 14)
         view.addSubview(textFieldView!)
     }
@@ -80,30 +95,57 @@ class RegisterViewController: UIViewController {
 //MARK: - VIEWMODEL INTERACTIONS
 extension RegisterViewController {
     private func userRegister() {
-        var signupData: SignupData?
-        signupData?.firstName = firstNametext.textField.text?.trimmingCharacters(in: .whitespacesAndNewlines)
-        signupData?.lastName = lastNametext.textField.text?.trimmingCharacters(in: .whitespacesAndNewlines)
-        signupData?.email = emailtext.textField.text?.trimmingCharacters(in: .whitespacesAndNewlines)
-        signupData?.phone = phoneNumbertext.textField.text?.trimmingCharacters(in: .whitespacesAndNewlines)
-        signupData?.password = passwordtext.textField.text?.trimmingCharacters(in: .whitespacesAndNewlines)
-        signupData?.confirmPassword = passwordtext.textField.text?.trimmingCharacters(in: .whitespacesAndNewlines)
-//        signupData?.organizationType = firstNametext.textField.text?.trimmingCharacters(in: .whitespacesAndNewlines)
+        var signupData = SignupData(firstName: firstName, lastName: lastName, organizationType: workType, email: email, phone: phone, password: password)
+//        signupData?.firstName = firstName
+//        signupData?.lastName = lastName
+//        signupData?.email = email
+//        signupData?.phone = phone
+//        signupData?.password = password
+//        signupData?.organizationType = workType
         
         viewModel = RegisterViewModel(signupData: signupData)
         self.viewModel.userRegister { result in
             switch result {
             case .success(let message):
-                print(message)
+                print("success :: \(message)")
                 //                self.showToast(with: message, toastType: .success)
                 //                if let successDelegateToRootVC = self.successDelegateToRootVC {
                 //                    successDelegateToRootVC.onSuccess(with: self.index)
                 //                }
                 //                self.view.window?.rootViewController?.dismiss(animated: true, completion: nil)
             case .failure(let error):
+                print("failure :: \(error.localizedDescription)")
                 break
                 //                self.showToast(with: error.localizedDescription, toastType: .error)
             }
         }
         
+    }
+}
+
+extension RegisterViewController: DelegateTextField {
+    func didChangeTextField(with text: String, and type: TextFieldType) {
+        switch type {
+        case .signupFirstName:
+            firstName = text
+            break
+        case .signupLastName:
+            lastName = text
+            break
+        case .signupWorkType:
+            workType = text
+            break
+        case .signupEmail:
+            email = text
+            break
+        case .signupPhoneNumber:
+            phone = text
+            break
+        case .signupPassword:
+            password = text
+            break
+        default:
+            break
+        }
     }
 }
