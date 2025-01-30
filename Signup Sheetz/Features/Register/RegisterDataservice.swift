@@ -12,9 +12,7 @@ class RegisterDataService {
     
     @Published var registerModel: RegisterModel?
     var cancellables: AnyCancellable?
-    
     var signupData = SignupData()
-    
     init(_signupData: SignupData) {
         self.signupData = _signupData
     }

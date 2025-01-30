@@ -20,6 +20,8 @@ class RegisterViewController: UIViewController {
     @IBOutlet weak var signUpButtonView: UIView!
     @IBOutlet weak var alreadyHaveAccountLabel: UILabel!
     
+    
+    //MARK: - Properties
     private var viewModel = RegisterViewModel()
     var firstName = ""
     var lastName = ""
@@ -96,30 +98,29 @@ class RegisterViewController: UIViewController {
 extension RegisterViewController {
     private func userRegister() {
         var signupData = SignupData(firstName: firstName, lastName: lastName, organizationType: workType, email: email, phone: phone, password: password)
-//        signupData?.firstName = firstName
-//        signupData?.lastName = lastName
-//        signupData?.email = email
-//        signupData?.phone = phone
-//        signupData?.password = password
-//        signupData?.organizationType = workType
-        
         viewModel = RegisterViewModel(signupData: signupData)
-        self.viewModel.userRegister { result in
+        
+        
+        viewModel.validate { result in
             switch result {
-            case .success(let message):
-                print("success :: \(message)")
-                //                self.showToast(with: message, toastType: .success)
-                //                if let successDelegateToRootVC = self.successDelegateToRootVC {
-                //                    successDelegateToRootVC.onSuccess(with: self.index)
-                //                }
-                //                self.view.window?.rootViewController?.dismiss(animated: true, completion: nil)
+            case .success(_):
+                self.viewModel.userRegister { result in
+                    switch result {
+                    case .success(let message):
+                        
+                        self.showOKAlert(with: "Success", and: message) { alert in
+                        }
+                        
+                    case .failure(let error):
+                        self.showOKAlert(with: "Error", and: error.localizedDescription) { alert in
+                        }
+                    }
+                }
             case .failure(let error):
-                print("failure :: \(error.localizedDescription)")
-                break
-                //                self.showToast(with: error.localizedDescription, toastType: .error)
+                self.showOKAlert(with: "Error", and: error.localizedDescription) { alert in
+                }
             }
         }
-        
     }
 }
 

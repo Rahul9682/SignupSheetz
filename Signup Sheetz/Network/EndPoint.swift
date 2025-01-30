@@ -17,7 +17,7 @@ extension EndPoint {
         var components = URLComponents()
         components.scheme = "https"
         components.host = "laravel9.etrueconcept.com"
-        components.path = "/" + path
+        components.path = "/signupsheetz/api/" + path
         if !queryItems.isEmpty {
             components.queryItems = queryItems
         }
@@ -28,15 +28,11 @@ extension EndPoint {
 
 extension EndPoint {
     static var signup: Self {
-        EndPoint(path: "signupsheetz/api/signup")
+        EndPoint(path: "signup")
+    }
+    static var login: Self {
+        EndPoint(path: "login")
     }
     
-//    static func getRestaurantDetail(with restaurantID: String) -> Self {
-//        EndPoint(
-//            path: "restaurantDetails&products",
-//            queryItems: [
-//                URLQueryItem(name: "id", value: restaurantID),
-//            ]
-//        )
-//    }
+
 }

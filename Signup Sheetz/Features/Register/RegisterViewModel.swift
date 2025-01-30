@@ -43,6 +43,29 @@ class RegisterViewModel {
             registerDataService = RegisterDataService(_signupData: signupData)
         }
     }
+    
+    // MARK: - VALIDATION METHOD
+    func validate(completionHandler: @escaping (Result<Bool, Error>) -> Void) {
+        if firstName.isEmpty {
+            completionHandler(.failure(ValidationError.emptyFirstName))
+        } else if lastName.isEmpty {
+            completionHandler(.failure(ValidationError.emptyLastName))
+        }else if organizationType.isEmpty {
+            completionHandler(.failure(ValidationError.emptyWorkType))
+        }  else if email.isEmpty {
+            completionHandler(.failure(ValidationError.emptyEmail))
+        } else if !isValidEmail {
+            completionHandler(.failure(ValidationError.invalidEmail))
+        } else if phone.isEmpty {
+            completionHandler(.failure(ValidationError.emptyPhone))
+        }  else if password.isEmpty {
+            completionHandler(.failure(ValidationError.emptyPassword))
+        } else if !isValidPassword {
+            completionHandler(.failure(ValidationError.invalidPassword))
+        } else {
+            completionHandler(.success(true))
+        }
+    }
 }
 
 //MARK: - API INTEGRATION

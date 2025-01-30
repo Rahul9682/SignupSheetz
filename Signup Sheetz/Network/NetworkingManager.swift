@@ -45,7 +45,6 @@ class NetworkingManager {
         print("URL: \(endPoint.url)")
         var request = URLRequest(url: endPoint.url)
         request.httpMethod = httpMethod.value
-        
         //        if let accessToken = Constants.getUser()?.token as? String {
         //            request.allHTTPHeaderFields = ["Content-Type": "application/json",
         //                                           "X-Requested-With": "XMLHttpRequest", "Authorization": "Bearer \(accessToken)"]

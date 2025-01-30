@@ -27,6 +27,8 @@ class RegisterData: Codable {
     }
 }
 
+
+//MARK: - Request Model
 struct SignupData {
     var firstName, lastName, organizationType,  email, phone, password, confirmPassword: String?
 }

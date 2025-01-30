@@ -33,6 +33,12 @@ class CustomTextFieldView: UIView {
         iconImageView.image = icon
         textField.placeholder = placeholder
         textField.font = FontManager.customFont(weight: fontWeight, size: fontSize)
+        switch delegateTextfieldType {
+        case .loginPassword, .signupPassword:
+            textField.returnKeyType = .done
+        default:
+            textField.returnKeyType = .next
+        }
     }
     
     @IBAction func searchTextFieldAction(_ sender: UITextField) {

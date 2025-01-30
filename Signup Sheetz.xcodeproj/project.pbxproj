@@ -30,6 +30,12 @@
 		C7CEC1C12D421A0E00EFECFB /* EndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7CEC1BF2D421A0E00EFECFB /* EndPoint.swift */; };
 		C7CEC1C32D421A7A00EFECFB /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7CEC1C22D421A7A00EFECFB /* Constants.swift */; };
 		C7CEC1C52D421B4100EFECFB /* LocalTexts.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7CEC1C42D421B4100EFECFB /* LocalTexts.swift */; };
+		C7D74BB22D4B3C4D004FA82C /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7D74BB12D4B3C4D004FA82C /* LoginModel.swift */; };
+		C7D74BB42D4B3C6D004FA82C /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7D74BB32D4B3C6D004FA82C /* LoginViewModel.swift */; };
+		C7D74BB62D4B3C96004FA82C /* LoginDataservice.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7D74BB52D4B3C96004FA82C /* LoginDataservice.swift */; };
+		C7D74BB82D4B45FE004FA82C /* UserDefaultsHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7D74BB72D4B45FE004FA82C /* UserDefaultsHelper.swift */; };
+		C7D74BBC2D4B46B3004FA82C /* Keys.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7D74BBB2D4B46B3004FA82C /* Keys.swift */; };
+		C7D74BC02D4B4C5C004FA82C /* ViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7D74BBF2D4B4C5C004FA82C /* ViewControllerExtension.swift */; };
 		C7D756A92D475741008343A9 /* AirbnbCereal_W_Blk.otf in Resources */ = {isa = PBXBuildFile; fileRef = C7D756A42D475741008343A9 /* AirbnbCereal_W_Blk.otf */; };
 		C7D756AA2D475741008343A9 /* AirbnbCereal_W_Md.otf in Resources */ = {isa = PBXBuildFile; fileRef = C7D756A62D475741008343A9 /* AirbnbCereal_W_Md.otf */; };
 		C7D756AB2D475741008343A9 /* AirbnbCereal_W_XBd.otf in Resources */ = {isa = PBXBuildFile; fileRef = C7D756A72D475741008343A9 /* AirbnbCereal_W_XBd.otf */; };
@@ -91,6 +97,12 @@
 		C7CEC1BF2D421A0E00EFECFB /* EndPoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EndPoint.swift; sourceTree = "<group>"; };
 		C7CEC1C22D421A7A00EFECFB /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		C7CEC1C42D421B4100EFECFB /* LocalTexts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalTexts.swift; sourceTree = "<group>"; };
+		C7D74BB12D4B3C4D004FA82C /* LoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModel.swift; sourceTree = "<group>"; };
+		C7D74BB32D4B3C6D004FA82C /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		C7D74BB52D4B3C96004FA82C /* LoginDataservice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginDataservice.swift; sourceTree = "<group>"; };
+		C7D74BB72D4B45FE004FA82C /* UserDefaultsHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsHelper.swift; sourceTree = "<group>"; };
+		C7D74BBB2D4B46B3004FA82C /* Keys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keys.swift; sourceTree = "<group>"; };
+		C7D74BBF2D4B4C5C004FA82C /* ViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerExtension.swift; sourceTree = "<group>"; };
 		C7D756A22D475741008343A9 /* AirbnbCereal_W_Bd.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = AirbnbCereal_W_Bd.otf; sourceTree = "<group>"; };
 		C7D756A32D475741008343A9 /* AirbnbCereal_W_Bk.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = AirbnbCereal_W_Bk.otf; sourceTree = "<group>"; };
 		C7D756A42D475741008343A9 /* AirbnbCereal_W_Blk.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = AirbnbCereal_W_Blk.otf; sourceTree = "<group>"; };
@@ -159,6 +171,7 @@
 			children = (
 				C73A36A42D4769D200A622DA /* UIImage.swift */,
 				C7F830062D4A3172008EB7D2 /* StringExtension.swift */,
+				C7D74BBF2D4B4C5C004FA82C /* ViewControllerExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -244,6 +257,9 @@
 			isa = PBXGroup;
 			children = (
 				C7CEC18C2D4218A500EFECFB /* LoginViewController.swift */,
+				C7D74BB12D4B3C4D004FA82C /* LoginModel.swift */,
+				C7D74BB32D4B3C6D004FA82C /* LoginViewModel.swift */,
+				C7D74BB52D4B3C96004FA82C /* LoginDataservice.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -265,6 +281,7 @@
 				C7CEC1C42D421B4100EFECFB /* LocalTexts.swift */,
 				C7F830042D4A3137008EB7D2 /* ValidationEnum.swift */,
 				C7F8300A2D4A3852008EB7D2 /* Protocols.swift */,
+				C7D74BBB2D4B46B3004FA82C /* Keys.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -274,6 +291,7 @@
 			children = (
 				C7F830082D4A33C8008EB7D2 /* Spinner.swift */,
 				C73A36A12D47665700A622DA /* FontManager.swift */,
+				C7D74BB72D4B45FE004FA82C /* UserDefaultsHelper.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -559,21 +577,27 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C7D74BB62D4B3C96004FA82C /* LoginDataservice.swift in Sources */,
 				C7CEC18D2D4218A500EFECFB /* LoginViewController.swift in Sources */,
 				C75979552D48A35000D015A4 /* RegisterViewController.swift in Sources */,
 				C7F830052D4A3137008EB7D2 /* ValidationEnum.swift in Sources */,
+				C7D74BBC2D4B46B3004FA82C /* Keys.swift in Sources */,
 				C7F8300B2D4A3852008EB7D2 /* Protocols.swift in Sources */,
 				C73A36A52D4769D800A622DA /* UIImage.swift in Sources */,
 				C7F830072D4A3172008EB7D2 /* StringExtension.swift in Sources */,
 				C7CEC1C02D421A0E00EFECFB /* NetworkingManager.swift in Sources */,
 				C7CEC1C52D421B4100EFECFB /* LocalTexts.swift in Sources */,
+				C7D74BC02D4B4C5C004FA82C /* ViewControllerExtension.swift in Sources */,
+				C7D74BB42D4B3C6D004FA82C /* LoginViewModel.swift in Sources */,
 				C73A369E2D475CC300A622DA /* CustomTextFieldView.swift in Sources */,
 				C73A36A22D47665700A622DA /* FontManager.swift in Sources */,
 				C7CEC1C12D421A0E00EFECFB /* EndPoint.swift in Sources */,
 				C7A58E982D4A15FD0008511C /* RegisterViewModel.swift in Sources */,
+				C7D74BB22D4B3C4D004FA82C /* LoginModel.swift in Sources */,
 				C7A58E962D4A15ED0008511C /* RegisterModel.swift in Sources */,
 				C7CEC1892D4218A500EFECFB /* AppDelegate.swift in Sources */,
 				C7CEC18B2D4218A500EFECFB /* SceneDelegate.swift in Sources */,
+				C7D74BB82D4B45FE004FA82C /* UserDefaultsHelper.swift in Sources */,
 				C7F830032D4A2B71008EB7D2 /* RegisterDataservice.swift in Sources */,
 				C7CEC1C32D421A7A00EFECFB /* Constants.swift in Sources */,
 				C7F830092D4A33C8008EB7D2 /* Spinner.swift in Sources */,

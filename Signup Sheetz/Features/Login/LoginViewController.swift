@@ -19,9 +19,11 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var appleSignInView: UIView!
     @IBOutlet weak var googleSignInView: UIView!
     
+    
+    //MARK: - Properties
     var email = ""
     var password = ""
-    
+    private var viewModel = LoginViewModel()
     
     //MARK: - Life-Cycle-Methods
     override func viewDidLoad() {
@@ -29,7 +31,6 @@ class LoginViewController: UIViewController {
         confiqureUI()
         configureTextFieldView(view: emailView, icon: UIImage.emailIcon, placeholder: "abc@email.com", textfieldType: .loginEmail)
         configureTextFieldView(view: passwordView, icon: UIImage.passwordIcon, placeholder: "your password", textfieldType: .loginPassword)
-        
     }
     
     private func configureTextFieldView(view: CustomTextFieldView, icon: UIImage?, placeholder: String, textfieldType: TextFieldType) {
@@ -73,6 +74,11 @@ class LoginViewController: UIViewController {
     }
     
     
+    @IBAction func loginbutton(_ sender: Any) {
+        userLogin()
+    }
+    
+    
 }
 
 extension LoginViewController: DelegateTextField {
@@ -86,6 +92,40 @@ extension LoginViewController: DelegateTextField {
             break
         default:
             break
+        }
+    }
+}
+
+
+//MARK: - VIEWMODEL INTERACTIONS
+extension LoginViewController {
+    private func userLogin() {
+        var loginRequestData = LoginRequestData(email: email, password: password)
+        viewModel = LoginViewModel(loginData: loginRequestData)
+        
+        viewModel.validation { result in
+            switch result {
+            case .success(let success):
+                self.viewModel.userLogin { result in
+                    switch result {
+                    case .success(let message):
+                        
+                        print("success :: \(message)")
+                        self.showOKAlert(with: "Success", and: message) { alert in
+                          
+                        }
+                        
+                    case .failure(let error):
+                        self.showOKAlert(with: "Error", and: error.localizedDescription) { alert in
+                          
+                        }
+                    }
+                }
+            case .failure(let error):
+                self.showOKAlert(with: "Error", and: error.localizedDescription) { alert in
+                   
+                }
+            }
         }
     }
 }

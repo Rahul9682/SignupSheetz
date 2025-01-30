@@ -9,15 +9,15 @@ import Foundation
 
 extension String {
     //_Validation_Error_Messages
-    static let emptyName = "Please Enter Name"
+    static let emptyFirstName = "Please Enter First Name"
+    static let emptyLastName = "Please Enter Last Name"
     static let emptyEmail = "Please Enter Email"
+    static let emptyPhoneNumber = "Please Enter Phone Number"
+    static let emptyWorktype = "Please Enter Organisation"
     static let inValidEmail = "Please Enter Valid Email"
-    static let inValidNumber = "Please Enter 10 digit number"
     static let emptyPassword = "Please Enter Password"
     static let validPassword = "Please Enter Valid Password"
-    static let inValidPassword = "Password Field Must Be Of 8 Characters with 1 capital, 1 numeric & 1 special character"
-    static let emptyConfirmPassword = "Please Confirm Your Password"
-    static let inValidConfirmPassword = "Password & Confirm Password Must Be Same"
+    static let inValidPassword = "Password must be at least 8 characters long and include at least one uppercase letter, one number, and one special character"
     
     //_Methods
     func isValidEmail() -> Bool {

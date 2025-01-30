@@ -10,8 +10,9 @@ import Foundation
 enum ValidationError: LocalizedError, Error {
     /*----------------------_Login_----------------------*/
     case emptyEmail, invalidEmail, emptyPassword
+    
     /*-----------------------_SignUp_-----------------------*/
-    case emptyName, invalidPassword, emptyConfirmPassword, invalidConfirmPassword
+    case emptyFirstName,emptyLastName, invalidPassword, emptyPhone, emptyWorkType
     
     var errorDescription: String? {
         switch self {
@@ -23,14 +24,16 @@ enum ValidationError: LocalizedError, Error {
         case .emptyPassword:
             return String.emptyPassword
             /*---_SignUp_---*/
-        case .emptyName:
-            return String.emptyName
+        case .emptyFirstName:
+            return String.emptyFirstName
+        case .emptyLastName:
+            return String.emptyLastName
         case .invalidPassword:
             return String.inValidPassword
-        case .emptyConfirmPassword:
-            return String.emptyConfirmPassword
-        case .invalidConfirmPassword:
-            return String.inValidConfirmPassword
+        case .emptyPhone:
+            return String.emptyPhoneNumber
+        case .emptyWorkType:
+            return String.emptyWorktype
         }
     }
 }
