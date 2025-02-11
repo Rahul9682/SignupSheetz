@@ -35,7 +35,7 @@ class LoginViewController: UIViewController {
     }
     
     func configureNavigationToHome() {
-        if let data = LocalStorage.getUserData() {
+        if let _ = LocalStorage.getUserData() {
             navigateToHome()
         }
     }
@@ -73,7 +73,7 @@ class LoginViewController: UIViewController {
     func navigateToHome() {
         let tabBarController = CustomTabBarController()
         tabBarController.modalPresentationStyle = .fullScreen
-    self.navigationController?.pushViewController(tabBarController, animated: false)
+        self.navigationController?.pushViewController(tabBarController, animated: false)
     }
     
     //MARK: - Button Actions
@@ -83,6 +83,11 @@ class LoginViewController: UIViewController {
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
+    @IBAction func didClickForgotPassword(_ sender: UIButton) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "ForgotPasswordViewController") as! ForgotPasswordViewController
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
     
     @IBAction func loginbutton(_ sender: Any) {
         userLogin()
@@ -120,9 +125,7 @@ extension LoginViewController {
                     case .success(let message):
                         
                         print("success :: \(message)")
-                       // self.showOKAlert(with: "Success", and: message) { alert in
-                            self.navigateToHome()
-                        //}
+                        self.navigateToHome()
                         
                     case .failure(let error):
                         self.showOKAlert(with: "Error", and: error.localizedDescription) { alert in

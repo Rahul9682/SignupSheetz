@@ -7,8 +7,6 @@
 
 import Foundation
 
-
-
 // MARK: - LoginModel
 struct LoginModel: Codable {
     let success: Bool?
@@ -29,8 +27,6 @@ struct UserData: Codable {
         case email, phone
     }
 }
-
-
 
 //MARK: - Request Model
 struct LoginRequestData {

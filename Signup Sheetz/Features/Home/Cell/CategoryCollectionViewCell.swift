@@ -21,11 +21,6 @@ class CategoryCollectionViewCell: UICollectionViewCell {
         confiqureUI()
     }
     
-//    func configuereCell(with category: CategoryModel) {
-//        cateImage.image = UIImage(named: category.imageName)
-//        cateName.text = category.name
-//    }
-    
     func confiqureUI() {
         containerView.layer.cornerRadius = 10
         containerView.clipsToBounds = true

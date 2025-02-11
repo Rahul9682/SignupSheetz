@@ -14,6 +14,14 @@ extension UIImage {
     static let phoneIcon = UIImage(named: "phone")
     static let profileIcon = UIImage(named: "Profile")
     static let closeEyeIcon = UIImage(named: "closeEye")
+    static let userPlaceholder = UIImage(named: "user")
+    static let bellIcon = UIImage(named: "bell")
+    //
+    static let homeTabIcon = UIImage(named: "Home")
+    static let invitationTabIcon = UIImage(named: "Work")
+    static let addEventRedIcon = UIImage(named: "add_event_icon")
+    static let eventTabIcon = UIImage(named: "Category")
+    static let profileTabIcon = UIImage(named: "Profile")
 }
 
 extension UIView {
@@ -33,3 +41,4 @@ extension UIView {
         self.layer.masksToBounds = false
     }
 }
+//

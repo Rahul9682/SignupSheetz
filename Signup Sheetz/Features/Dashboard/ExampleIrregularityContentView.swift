@@ -30,9 +30,9 @@ class ExampleIrregularityContentView: ESTabBarItemContentView {
         imageView.layer.shadowRadius = 8
 
         // Set Plus Icon Using Separate ImageView
-        let plusImageView = UIImageView(image: UIImage(named: "eventAddition"))
+        let plusImageView = UIImageView(image: UIImage.addEventIcon)
         plusImageView.tintColor = .white
-        plusImageView.image = UIImage(named: "eventAddition")
+        plusImageView.image = UIImage.addEventIcon
         plusImageView.contentMode = .scaleAspectFit
         plusImageView.frame = CGRect(x: 0, y: 0, width: 50, height: 50)
         plusImageView.center = CGPoint(x: plusIconSize / 2, y: plusIconSize / 2)

@@ -63,25 +63,18 @@ class HomeViewController: UIViewController {
         let navigationBar = Bundle.main.loadNibNamed("CustomNavigationBar", owner: self, options: nil)?.first as? CustomNavigationBar
         navigationBar?.autoresizingMask = [.flexibleHeight, .flexibleWidth]
         navigationBar?.frame = self.navigationBar.bounds
-        navigationBar?.configureUI(with: UIImage(named: "user"), topLabelText: "Welcome", bottomLabelText: LocalStorage.getUserData()?.firstName, trailingImage: UIImage(named: "bell"))
+        navigationBar?.configureUI(with: UIImage.userPlaceholder, topLabelText: "Welcome", bottomLabelText: LocalStorage.getUserData()?.firstName, trailingImage: UIImage.bellIcon)
       //  navigationBar?.notificationButton.isHidden = false
       //  navigationBar?.backButton.isHidden = false
         navigationBar?.didClickSideMenuButton = {
-            //self.findHamburguerViewController()?.showMenuViewController()
+            self.showYesOrNoAlert(with: "Log out", message: "Are you sure you want to log out?") { alert in
+                LocalStorage.deleteUserData()
+                let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+                let vc = storyBoard.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
+                self.navigationController?.pushViewController(vc, animated: false)
+            }
         }
-        navigationBar?.didClickNotificationButton = {
-//            if let _ = UserDefaults.standard.value(forKey: Auth.Keys.userId) as? Int {
-//                let storyBoard = UIStoryboard(name: Storyboards.notificationStoryboard, bundle: nil)
-//                let vc = storyBoard.instantiateViewController(withIdentifier: "NotificationsViewController") as! NotificationsViewController
-//                self.navigationController?.pushViewController(vc, animated: true)
-//            } else {
-//                let storyBoard = UIStoryboard(name: Storyboards.loginStoryboard, bundle: nil)
-//                let vc = storyBoard.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
-//                vc.successDelegate = self
-//                vc.loginDismissalType = .homeToNotification
-//                self.navigationController?.present(vc, animated: true)
-//            }
-        }
+        navigationBar?.didClickNotificationButton = {}
         self.navigationBar.addSubview(navigationBar!)
     }
 }

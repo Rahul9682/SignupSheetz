@@ -10,6 +10,18 @@
 		5DEFD724BB4D2F2F6DA5161A /* Pods_Signup_Sheetz_Signup_SheetzUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 054BBF53D34C3EAA7D0E6579 /* Pods_Signup_Sheetz_Signup_SheetzUITests.framework */; };
 		641FCA5C2990F2E8CCE65022 /* Pods_Signup_SheetzTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B8660F0B7E34BFAA598AF01 /* Pods_Signup_SheetzTests.framework */; };
 		8A99DA4EDA1B82E9F612668D /* Pods_Signup_Sheetz.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6EA1BA90EBA475B107FE8E3 /* Pods_Signup_Sheetz.framework */; };
+		C709A1072D5B52B000B04AB8 /* ForgotPasswordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C709A1062D5B52B000B04AB8 /* ForgotPasswordViewModel.swift */; };
+		C709A1092D5B52BB00B04AB8 /* ForgotPasswordModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C709A1082D5B52BB00B04AB8 /* ForgotPasswordModel.swift */; };
+		C709A10B2D5B52CB00B04AB8 /* ForgotPasswordDataservice.swift in Sources */ = {isa = PBXBuildFile; fileRef = C709A10A2D5B52CB00B04AB8 /* ForgotPasswordDataservice.swift */; };
+		C709A10D2D5B531800B04AB8 /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C709A10C2D5B531800B04AB8 /* ForgotPasswordViewController.swift */; };
+		C709A1112D5B7D9E00B04AB8 /* VerifyOTPDataservice.swift in Sources */ = {isa = PBXBuildFile; fileRef = C709A1102D5B7D9E00B04AB8 /* VerifyOTPDataservice.swift */; };
+		C709A1132D5B7DA600B04AB8 /* VerifyOTPModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C709A1122D5B7DA600B04AB8 /* VerifyOTPModel.swift */; };
+		C709A1152D5B7DAE00B04AB8 /* VerifyOTPViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C709A1142D5B7DAE00B04AB8 /* VerifyOTPViewModel.swift */; };
+		C709A1172D5B7DD500B04AB8 /* ResetPasswordModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C709A1162D5B7DD500B04AB8 /* ResetPasswordModel.swift */; };
+		C709A1192D5B7DE100B04AB8 /* ResetPasswordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C709A1182D5B7DE100B04AB8 /* ResetPasswordViewModel.swift */; };
+		C709A11B2D5B7DEA00B04AB8 /* ResetPasswordDataservice.swift in Sources */ = {isa = PBXBuildFile; fileRef = C709A11A2D5B7DEA00B04AB8 /* ResetPasswordDataservice.swift */; };
+		C709A11D2D5B7E0100B04AB8 /* VerifyOTPViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C709A11C2D5B7E0100B04AB8 /* VerifyOTPViewController.swift */; };
+		C709A11F2D5B7E0E00B04AB8 /* ResetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C709A11E2D5B7E0E00B04AB8 /* ResetPasswordViewController.swift */; };
 		C71848182D548DBF008F530D /* CustomNavigationBar.xib in Resources */ = {isa = PBXBuildFile; fileRef = C71848162D548DBF008F530D /* CustomNavigationBar.xib */; };
 		C71848192D548DBF008F530D /* CustomNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = C71848152D548DBF008F530D /* CustomNavigationBar.swift */; };
 		C73A369E2D475CC300A622DA /* CustomTextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C73A369D2D475CC300A622DA /* CustomTextFieldView.swift */; };
@@ -92,6 +104,18 @@
 		6B8660F0B7E34BFAA598AF01 /* Pods_Signup_SheetzTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Signup_SheetzTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7E1795AA610E83C1C38449D9 /* Pods-Signup Sheetz-Signup SheetzUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Signup Sheetz-Signup SheetzUITests.release.xcconfig"; path = "Target Support Files/Pods-Signup Sheetz-Signup SheetzUITests/Pods-Signup Sheetz-Signup SheetzUITests.release.xcconfig"; sourceTree = "<group>"; };
 		7FC9770539F809ECA7ABB7C5 /* Pods-Signup Sheetz.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Signup Sheetz.release.xcconfig"; path = "Target Support Files/Pods-Signup Sheetz/Pods-Signup Sheetz.release.xcconfig"; sourceTree = "<group>"; };
+		C709A1062D5B52B000B04AB8 /* ForgotPasswordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewModel.swift; sourceTree = "<group>"; };
+		C709A1082D5B52BB00B04AB8 /* ForgotPasswordModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordModel.swift; sourceTree = "<group>"; };
+		C709A10A2D5B52CB00B04AB8 /* ForgotPasswordDataservice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordDataservice.swift; sourceTree = "<group>"; };
+		C709A10C2D5B531800B04AB8 /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
+		C709A1102D5B7D9E00B04AB8 /* VerifyOTPDataservice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifyOTPDataservice.swift; sourceTree = "<group>"; };
+		C709A1122D5B7DA600B04AB8 /* VerifyOTPModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifyOTPModel.swift; sourceTree = "<group>"; };
+		C709A1142D5B7DAE00B04AB8 /* VerifyOTPViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifyOTPViewModel.swift; sourceTree = "<group>"; };
+		C709A1162D5B7DD500B04AB8 /* ResetPasswordModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordModel.swift; sourceTree = "<group>"; };
+		C709A1182D5B7DE100B04AB8 /* ResetPasswordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordViewModel.swift; sourceTree = "<group>"; };
+		C709A11A2D5B7DEA00B04AB8 /* ResetPasswordDataservice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordDataservice.swift; sourceTree = "<group>"; };
+		C709A11C2D5B7E0100B04AB8 /* VerifyOTPViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifyOTPViewController.swift; sourceTree = "<group>"; };
+		C709A11E2D5B7E0E00B04AB8 /* ResetPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordViewController.swift; sourceTree = "<group>"; };
 		C71848152D548DBF008F530D /* CustomNavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigationBar.swift; sourceTree = "<group>"; };
 		C71848162D548DBF008F530D /* CustomNavigationBar.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomNavigationBar.xib; sourceTree = "<group>"; };
 		C73A369D2D475CC300A622DA /* CustomTextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextFieldView.swift; sourceTree = "<group>"; };
@@ -195,6 +219,51 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		C709A1022D5B526800B04AB8 /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				C7CEC1B92D4219B800EFECFB /* Login */,
+				C75979532D48A30700D015A4 /* Register */,
+				C709A1032D5B527300B04AB8 /* Forgot Password */,
+				C709A10E2D5B7B6600B04AB8 /* Verify OTP */,
+				C709A10F2D5B7B7100B04AB8 /* Reset Password */,
+			);
+			path = Authentication;
+			sourceTree = "<group>";
+		};
+		C709A1032D5B527300B04AB8 /* Forgot Password */ = {
+			isa = PBXGroup;
+			children = (
+				C709A1082D5B52BB00B04AB8 /* ForgotPasswordModel.swift */,
+				C709A1062D5B52B000B04AB8 /* ForgotPasswordViewModel.swift */,
+				C709A10A2D5B52CB00B04AB8 /* ForgotPasswordDataservice.swift */,
+				C709A10C2D5B531800B04AB8 /* ForgotPasswordViewController.swift */,
+			);
+			path = "Forgot Password";
+			sourceTree = "<group>";
+		};
+		C709A10E2D5B7B6600B04AB8 /* Verify OTP */ = {
+			isa = PBXGroup;
+			children = (
+				C709A1122D5B7DA600B04AB8 /* VerifyOTPModel.swift */,
+				C709A1142D5B7DAE00B04AB8 /* VerifyOTPViewModel.swift */,
+				C709A1102D5B7D9E00B04AB8 /* VerifyOTPDataservice.swift */,
+				C709A11C2D5B7E0100B04AB8 /* VerifyOTPViewController.swift */,
+			);
+			path = "Verify OTP";
+			sourceTree = "<group>";
+		};
+		C709A10F2D5B7B7100B04AB8 /* Reset Password */ = {
+			isa = PBXGroup;
+			children = (
+				C709A1162D5B7DD500B04AB8 /* ResetPasswordModel.swift */,
+				C709A1182D5B7DE100B04AB8 /* ResetPasswordViewModel.swift */,
+				C709A11A2D5B7DEA00B04AB8 /* ResetPasswordDataservice.swift */,
+				C709A11E2D5B7E0E00B04AB8 /* ResetPasswordViewController.swift */,
+			);
+			path = "Reset Password";
+			sourceTree = "<group>";
+		};
 		C71848172D548DBF008F530D /* Navigation View */ = {
 			isa = PBXGroup;
 			children = (
@@ -255,10 +324,10 @@
 		C75979532D48A30700D015A4 /* Register */ = {
 			isa = PBXGroup;
 			children = (
-				C75979542D48A35000D015A4 /* RegisterViewController.swift */,
 				C7A58E952D4A15ED0008511C /* RegisterModel.swift */,
 				C7A58E972D4A15FD0008511C /* RegisterViewModel.swift */,
 				C7F830022D4A2B71008EB7D2 /* RegisterDataservice.swift */,
+				C75979542D48A35000D015A4 /* RegisterViewController.swift */,
 			);
 			path = Register;
 			sourceTree = "<group>";
@@ -356,10 +425,10 @@
 		C7CEC1B92D4219B800EFECFB /* Login */ = {
 			isa = PBXGroup;
 			children = (
-				C7CEC18C2D4218A500EFECFB /* LoginViewController.swift */,
 				C7D74BB12D4B3C4D004FA82C /* LoginModel.swift */,
 				C7D74BB32D4B3C6D004FA82C /* LoginViewModel.swift */,
 				C7D74BB52D4B3C96004FA82C /* LoginDataservice.swift */,
+				C7CEC18C2D4218A500EFECFB /* LoginViewController.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -374,8 +443,7 @@
 				C7D74BCA2D4BB3D5004FA82C /* My Invitations */,
 				C7D74BC72D4BB377004FA82C /* Home */,
 				C7D74BC42D4BB2E1004FA82C /* Dashboard */,
-				C75979532D48A30700D015A4 /* Register */,
-				C7CEC1B92D4219B800EFECFB /* Login */,
+				C709A1022D5B526800B04AB8 /* Authentication */,
 			);
 			path = Features;
 			sourceTree = "<group>";
@@ -726,17 +794,25 @@
 				C73BF08E2D50D7B400E08318 /* CategoryCollectionViewCell.swift in Sources */,
 				C7D74BBC2D4B46B3004FA82C /* Keys.swift in Sources */,
 				C73BF0872D50C54900E08318 /* UIColorExtension.swift in Sources */,
+				C709A11F2D5B7E0E00B04AB8 /* ResetPasswordViewController.swift in Sources */,
 				C7F8300B2D4A3852008EB7D2 /* Protocols.swift in Sources */,
+				C709A10D2D5B531800B04AB8 /* ForgotPasswordViewController.swift in Sources */,
 				C764D0512D4CFE110085A3F8 /* ProfileViewController.swift in Sources */,
+				C709A11B2D5B7DEA00B04AB8 /* ResetPasswordDataservice.swift in Sources */,
+				C709A1112D5B7D9E00B04AB8 /* VerifyOTPDataservice.swift in Sources */,
 				C75641702D50FB6900B560E2 /* MyEventTableViewCell.swift in Sources */,
 				C73A36A52D4769D800A622DA /* UIImage.swift in Sources */,
 				C7F830072D4A3172008EB7D2 /* StringExtension.swift in Sources */,
+				C709A1192D5B7DE100B04AB8 /* ResetPasswordViewModel.swift in Sources */,
 				C7CEC1C02D421A0E00EFECFB /* NetworkingManager.swift in Sources */,
 				C764D04B2D4CDFE00085A3F8 /* ExampleBouncesContentView.swift in Sources */,
 				C73BF0852D50A71D00E08318 /* MenuViewController.swift in Sources */,
+				C709A1072D5B52B000B04AB8 /* ForgotPasswordViewModel.swift in Sources */,
 				C7CEC1C52D421B4100EFECFB /* LocalTexts.swift in Sources */,
 				C7D74BC02D4B4C5C004FA82C /* ViewControllerExtension.swift in Sources */,
+				C709A1172D5B7DD500B04AB8 /* ResetPasswordModel.swift in Sources */,
 				C764D04F2D4CFE010085A3F8 /* MyEventViewController.swift in Sources */,
+				C709A1092D5B52BB00B04AB8 /* ForgotPasswordModel.swift in Sources */,
 				C764D0492D4CDEE10085A3F8 /* ExampleBasicContentView.swift in Sources */,
 				C7D74BCC2D4BB3E6004FA82C /* MyInvitationsViewController.swift in Sources */,
 				C7D74BC92D4BB38F004FA82C /* HomeViewController.swift in Sources */,
@@ -745,15 +821,19 @@
 				C73A369E2D475CC300A622DA /* CustomTextFieldView.swift in Sources */,
 				C73A36A22D47665700A622DA /* FontManager.swift in Sources */,
 				C7CEC1C12D421A0E00EFECFB /* EndPoint.swift in Sources */,
+				C709A1152D5B7DAE00B04AB8 /* VerifyOTPViewModel.swift in Sources */,
+				C709A11D2D5B7E0100B04AB8 /* VerifyOTPViewController.swift in Sources */,
 				C7A58E982D4A15FD0008511C /* RegisterViewModel.swift in Sources */,
 				C7D74BB22D4B3C4D004FA82C /* LoginModel.swift in Sources */,
 				C7A58E962D4A15ED0008511C /* RegisterModel.swift in Sources */,
 				C7CEC1892D4218A500EFECFB /* AppDelegate.swift in Sources */,
 				C764D0472D4CDE9A0085A3F8 /* ExampleIrregularityContentView.swift in Sources */,
 				C7CEC18B2D4218A500EFECFB /* SceneDelegate.swift in Sources */,
+				C709A10B2D5B52CB00B04AB8 /* ForgotPasswordDataservice.swift in Sources */,
 				C7D74BB82D4B45FE004FA82C /* UserDefaultsHelper.swift in Sources */,
 				C764D0542D4CFE450085A3F8 /* CreateEventViewController.swift in Sources */,
 				C71848192D548DBF008F530D /* CustomNavigationBar.swift in Sources */,
+				C709A1132D5B7DA600B04AB8 /* VerifyOTPModel.swift in Sources */,
 				C7F830032D4A2B71008EB7D2 /* RegisterDataservice.swift in Sources */,
 				C7CEC1C32D421A7A00EFECFB /* Constants.swift in Sources */,
 				C7F830092D4A33C8008EB7D2 /* Spinner.swift in Sources */,

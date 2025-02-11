@@ -7,10 +7,7 @@
 
 import Foundation
 
-
 class LocalStorage {
-   
-    
     static func saveUserData(data: UserData?) {
         guard let data = data else {return}
         do {
@@ -39,5 +36,9 @@ class LocalStorage {
         return nil
     }
     
-    
+    static func deleteUserData() {
+        let userDefaults = UserDefaults.standard
+        userDefaults.removeObject(forKey: Keys.userData)
+        print("Successfully Deleted")
+    }
 }

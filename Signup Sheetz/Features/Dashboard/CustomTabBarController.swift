@@ -30,35 +30,35 @@ class CustomTabBarController: ESTabBarController {
         
         firstNav.tabBarItem = ESTabBarItem(
             title: "Home",
-            image: UIImage(named: "Home"),
-            selectedImage: UIImage(named: "Home")
+            image: UIImage.homeTabIcon,
+            selectedImage: UIImage.homeTabIcon
         )
         
         secondNav.tabBarItem = ESTabBarItem(
             title: "My Invitations",
-            image: UIImage(named: "Work"),
-            selectedImage: UIImage(named: "Work")
+            image: UIImage.invitationTabIcon,
+            selectedImage: UIImage.invitationTabIcon
         )
         
         centerButtonVC.tabBarItem = ESTabBarItem(
             ExampleIrregularityContentView(),
             title: nil, // Hide title for center button
-            image: UIImage(named: "eventAddition"),
-            selectedImage: UIImage(named: "eventAddition")
+            image: UIImage.addEventRedIcon,
+            selectedImage: UIImage.addEventRedIcon
         )
         
         
         
         forthNav.tabBarItem = ESTabBarItem(
             title: "My Events",
-            image: UIImage(named: "Category"),
-            selectedImage: UIImage(named: "Category")
+            image: UIImage.eventTabIcon,
+            selectedImage: UIImage.eventTabIcon
         )
         
         fifthNav.tabBarItem = ESTabBarItem(
             title: "Profile",
-            image: UIImage(named: "Profile"),
-            selectedImage: UIImage(named: "Profile")
+            image: UIImage.profileTabIcon,
+            selectedImage: UIImage.profileTabIcon
         )
         
         

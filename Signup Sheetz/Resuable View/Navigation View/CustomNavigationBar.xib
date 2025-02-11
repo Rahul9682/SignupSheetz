@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -20,7 +20,7 @@
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zyw-fZ-cct">
                             <rect key="frame" x="0.0" y="383" width="414" height="48"/>
                             <subviews>
-                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XHX-qH-hZo" customClass="UIControl" customModule="Signup_Sheetz" customModuleProvider="target">
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XHX-qH-hZo" customClass="UIControl">
                                     <rect key="frame" x="0.0" y="0.0" width="48" height="48"/>
                                     <subviews>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="rsB-zB-9Lp">
@@ -39,7 +39,7 @@
                                         <constraint firstAttribute="height" constant="48" id="l7d-eY-FOI"/>
                                     </constraints>
                                     <connections>
-                                        <action selector="didClickLeading:" destination="jM8-EC-Vbb" eventType="valueChanged" id="3u6-9F-td1"/>
+                                        <action selector="didClickLeading:" destination="jM8-EC-Vbb" eventType="touchUpInside" id="U6n-eL-2M4"/>
                                     </connections>
                                 </view>
                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="6J5-ZF-W4O">
@@ -78,7 +78,7 @@
                                         <constraint firstItem="9hH-j6-RyH" firstAttribute="centerY" secondItem="fik-Ls-6RF" secondAttribute="centerY" id="rk9-FV-NzZ"/>
                                     </constraints>
                                     <connections>
-                                        <action selector="didClicktrailing:" destination="jM8-EC-Vbb" eventType="valueChanged" id="fKU-nU-l9Z"/>
+                                        <action selector="didClicktrailing:" destination="jM8-EC-Vbb" eventType="touchUpInside" id="0mB-Po-hpc"/>
                                     </connections>
                                 </view>
                             </subviews>

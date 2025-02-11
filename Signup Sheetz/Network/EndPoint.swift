@@ -17,7 +17,8 @@ extension EndPoint {
         var components = URLComponents()
         components.scheme = "https"
         components.host = "laravel9.etrueconcept.com"
-        components.path = "/signupsheetz/api/" + path
+        components.path = "/sheetz/api/" + path
+        // components.path = "/signupsheetz/api/" + path
         if !queryItems.isEmpty {
             components.queryItems = queryItems
         }
@@ -33,6 +34,13 @@ extension EndPoint {
     static var login: Self {
         EndPoint(path: "login")
     }
-    
-
+    static var forgotPasswordSentEmail: Self {
+        EndPoint(path: "forgot-password-sentmail")
+    }
+    static var forgotPasswordVerifyOTP: Self {
+        EndPoint(path: "forgot-password-verifyotp")
+    }
+    static var resetPassword: Self {
+        EndPoint(path: "reset-password")
+    }
 }
