@@ -80,6 +80,7 @@ extension RegisterViewModel {
                     if let success = data.success {
                         if success {
                             // SaveAuthentication.saveUserData(with: data.data)
+                          //  LocalStorage.saveUserData(data: data)
                             completionHandler(.success(data.message ?? "N/A"))
                         } else {
                             self.networkingError = .wrongStatusCodeMessage(message: data.message ?? "")

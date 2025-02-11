@@ -13,6 +13,7 @@ extension UIImage {
     static let workIcon = UIImage(named: "work")
     static let phoneIcon = UIImage(named: "phone")
     static let profileIcon = UIImage(named: "Profile")
+    static let closeEyeIcon = UIImage(named: "closeEye")
 }
 
 extension UIView {

@@ -28,19 +28,26 @@ class LoginViewController: UIViewController {
     //MARK: - Life-Cycle-Methods
     override func viewDidLoad() {
         super.viewDidLoad()
+        configureNavigationToHome()
         confiqureUI()
         configureTextFieldView(view: emailView, icon: UIImage.emailIcon, placeholder: "abc@email.com", textfieldType: .loginEmail)
-        configureTextFieldView(view: passwordView, icon: UIImage.passwordIcon, placeholder: "your password", textfieldType: .loginPassword)
+        configureTextFieldView(view: passwordView, icon: UIImage.passwordIcon, placeholder: "your password", textfieldType: .loginPassword,trailingIcon:UIImage(systemName: "eye.slash"))
     }
     
-    private func configureTextFieldView(view: CustomTextFieldView, icon: UIImage?, placeholder: String, textfieldType: TextFieldType) {
+    func configureNavigationToHome() {
+        if let data = LocalStorage.getUserData() {
+            navigateToHome()
+        }
+    }
+    
+    private func configureTextFieldView(view: CustomTextFieldView, icon: UIImage?, placeholder: String, textfieldType: TextFieldType,trailingIcon: UIImage? = nil) {
         let textFieldView = Bundle.main.loadNibNamed("CustomTextFieldView", owner: self, options: nil)?.first as? CustomTextFieldView
         textFieldView?.autoresizingMask = [.flexibleHeight, .flexibleWidth]
         textFieldView?.setupView()
         textFieldView?.frame = view.bounds
         textFieldView?.delegateTextfieldType = textfieldType
         textFieldView?.delegateTextField = self
-        textFieldView?.configure(icon: icon, placeholder: placeholder,fontWeight: .light, fontSize: 14)
+        textFieldView?.configure(icon: icon, placeholder: placeholder,fontWeight: .light, fontSize: 14, trailingIcon: trailingIcon)
         view.addSubview(textFieldView!)
     }
     
@@ -61,10 +68,13 @@ class LoginViewController: UIViewController {
         signInButtonView.dropShadow()
         appleSignInView.dropShadowForSocialLogin()
         googleSignInView.dropShadowForSocialLogin()
-        
-        
     }
     
+    func navigateToHome() {
+        let tabBarController = CustomTabBarController()
+        tabBarController.modalPresentationStyle = .fullScreen
+    self.navigationController?.pushViewController(tabBarController, animated: false)
+    }
     
     //MARK: - Button Actions
     @IBAction func SignUpPageAction(_ sender: Any) {
@@ -76,9 +86,8 @@ class LoginViewController: UIViewController {
     
     @IBAction func loginbutton(_ sender: Any) {
         userLogin()
+        
     }
-    
-    
 }
 
 extension LoginViewController: DelegateTextField {
@@ -100,20 +109,20 @@ extension LoginViewController: DelegateTextField {
 //MARK: - VIEWMODEL INTERACTIONS
 extension LoginViewController {
     private func userLogin() {
-        var loginRequestData = LoginRequestData(email: email, password: password)
+        let loginRequestData = LoginRequestData(email: email, password: password)
         viewModel = LoginViewModel(loginData: loginRequestData)
         
         viewModel.validation { result in
             switch result {
-            case .success(let success):
+            case .success(_):
                 self.viewModel.userLogin { result in
                     switch result {
                     case .success(let message):
                         
                         print("success :: \(message)")
-                        self.showOKAlert(with: "Success", and: message) { alert in
-                          
-                        }
+                       // self.showOKAlert(with: "Success", and: message) { alert in
+                            self.navigateToHome()
+                        //}
                         
                     case .failure(let error):
                         self.showOKAlert(with: "Error", and: error.localizedDescription) { alert in

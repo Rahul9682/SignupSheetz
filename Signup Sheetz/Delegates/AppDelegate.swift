@@ -7,12 +7,18 @@
 
 import UIKit
 import IQKeyboardManagerSwift
+import SideMenu
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+//        let leftMenuNavigationController = SideMenuNavigationController(rootViewController: MenuViewController())
+//        leftMenuNavigationController.leftSide = true
+//        SideMenuManager.default.leftMenuNavigationController = leftMenuNavigationController
+        //SideMenuManager.default.addPanGestureToPresent(toView: self.navigationController!.navigationBar)
+       // SideMenuManager.default.addScreenEdgePanGesturesToPresent(toView: self.navigationController!.view)
         IQKeyboardManager.shared.enable = true
         return true
     }
