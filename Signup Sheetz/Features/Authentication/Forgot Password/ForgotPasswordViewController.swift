@@ -15,6 +15,7 @@ class ForgotPasswordViewController: UIViewController {
     
     //MARK: - Properties
     var email = ""
+    private var viewModel = ForgotPasswordViewModel(email: "")
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,6 +30,9 @@ class ForgotPasswordViewController: UIViewController {
         attributedString.addAttribute(.foregroundColor, value:customColor , range: range)
         goBackSingInLabel.attributedText = attributedString
         configureTextFieldView(view: emailView, icon: UIImage.emailIcon, placeholder: "abc@email.com", textfieldType: .forgotEmail)
+        
+//        let tap = UITapGestureRecognizer(target: self, action: #selector(closeKeyBoard))
+//        view.addGestureRecognizer(tap)
     }
     
     private func configureTextFieldView(view: CustomTextFieldView, icon: UIImage?, placeholder: String, textfieldType: TextFieldType,trailingIcon: UIImage? = nil) {
@@ -45,6 +49,10 @@ class ForgotPasswordViewController: UIViewController {
     @IBAction func didClickBackToLogin(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
     }
+    
+    @IBAction func didClickSendEmailForForgotPassword(_ sender: Any) {
+        forgotPassword()
+    }
 }
 
 extension ForgotPasswordViewController: DelegateTextField {
@@ -55,6 +63,41 @@ extension ForgotPasswordViewController: DelegateTextField {
             break
         default:
             break
+        }
+    }
+}
+
+//MARK: - VIEWMODEL INTERACTIONS
+extension ForgotPasswordViewController {
+    private func forgotPassword() {
+        viewModel = ForgotPasswordViewModel(email: email.trimmingCharacters(in: .whitespacesAndNewlines))
+        
+        viewModel.validation { result in
+            switch result {
+            case .success(_):
+                self.viewModel.forgotPassword { result in
+                    switch result {
+                    case .success(let message):
+                        
+                        print("success :: \(message)")
+                        self.showOKAlert(with: "Success", and: message) { alert in
+                            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                            let vc = storyboard.instantiateViewController(withIdentifier: "VerifyOTPViewController") as! VerifyOTPViewController
+                            vc.email = self.email.trimmingCharacters(in: .whitespacesAndNewlines)
+                            self.navigationController?.pushViewController(vc, animated: true)
+                        }
+                        
+                    case .failure(let error):
+                        self.showOKAlert(with: "Error", and: error.localizedDescription) { alert in
+                          
+                        }
+                    }
+                }
+            case .failure(let error):
+                self.showOKAlert(with: "Error", and: error.localizedDescription) { alert in
+                   
+                }
+            }
         }
     }
 }

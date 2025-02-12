@@ -25,6 +25,8 @@ extension UIViewController {
         DispatchQueue.main.async { self.present(alert, animated: true, completion: nil) }
     }
     
-    
+    @objc func closeKeyBoard() {
+        view.endEditing(true)
+    }
 
 }

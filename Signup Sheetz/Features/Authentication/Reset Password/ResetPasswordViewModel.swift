@@ -12,8 +12,10 @@ class ResetPasswordViewModel {
     //MARK: PROPERTIES
     @Published var email: String
     @Published var password: String
+    @Published var confirmPassword: String
     @Published var isValidEmail: Bool
     @Published var isValidPassword: Bool
+    @Published var isValidConfirmPassword: Bool
     
     private var networkingError: NetworkingError?
     private var validationError: ValidationError?
@@ -22,11 +24,13 @@ class ResetPasswordViewModel {
     private var cancellable: Set<AnyCancellable> = Set<AnyCancellable>()
     
     //MARK: INITIALIZER
-    init(email: String, password: String) {
+    init(email: String, password: String, confirmPassword: String) {
         self.email = email
         self.password = password
+        self.confirmPassword = confirmPassword
         self.isValidEmail = email.isValidEmail()
         self.isValidPassword = password.isValidPassword()
+        self.isValidConfirmPassword = confirmPassword.isValidConfirmPassword(with: password)
         resetPasswordDataService = ResetPasswordDataService(email: email, password: password)
     }
     
@@ -39,6 +43,10 @@ class ResetPasswordViewModel {
             completionHandler(.failure(ValidationError.emptyPassword))
         } else if !isValidPassword {
             completionHandler(.failure(ValidationError.invalidPassword))
+        } else if confirmPassword.isEmpty {
+            completionHandler(.failure(ValidationError.emptyConfirmPassword))
+        } else if !isValidConfirmPassword {
+            completionHandler(.failure(ValidationError.inValidConfirmPassword))
         } else {
             completionHandler(.success(true))
         }

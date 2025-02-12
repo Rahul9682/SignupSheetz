@@ -8,37 +8,30 @@
 import Foundation
 
 class LocalStorage {
-    static func saveUserData(data: UserData?) {
-        guard let data = data else {return}
+    static func saveUserData(data: LoginData?) {
         do {
             let encodedData = try JSONEncoder().encode(data)
-            let userDefaults = UserDefaults.standard
-            userDefaults.setValue(encodedData, forKey: Keys.userData)
-            print("Successfully Saved")
+            UserDefaults.standard.set(encodedData, forKey: Keys.userData)
+            UserDefaults.standard.synchronize()
         } catch {
-            print("Failed to encode [GetItemsData] to Data")
+            print("Error saving user data: \(error.localizedDescription)")
         }
-   
     }
     
     
-    static func getUserData() -> UserData? {
-        if let savedData = UserDefaults.standard.value(forKey: Keys.userData) as? Data {
-            var userData: UserData?
+    static func getUserData() -> LoginData? {
+        if let savedData = UserDefaults.standard.data(forKey: Keys.userData) {
             do {
-                userData = try JSONDecoder().decode(UserData.self, from: savedData)
-                print("Successfully Retrievd")
+                return try JSONDecoder().decode(LoginData.self, from: savedData)
             } catch {
-                print("Failed to Convert to Data")
+                print("Error retrieving user data: \(error.localizedDescription)")
             }
-            return userData
         }
         return nil
     }
     
     static func deleteUserData() {
-        let userDefaults = UserDefaults.standard
-        userDefaults.removeObject(forKey: Keys.userData)
-        print("Successfully Deleted")
+        UserDefaults.standard.removeObject(forKey: Keys.userData)
+        UserDefaults.standard.synchronize()
     }
 }

@@ -46,13 +46,7 @@
                                     <rect key="frame" x="56" y="0.0" width="310" height="48"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pLk-7A-x4t">
-                                            <rect key="frame" x="0.0" y="0.0" width="310" height="24"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xDR-e6-A8l">
-                                            <rect key="frame" x="0.0" y="24" width="310" height="24"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="310" height="48"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -113,11 +107,10 @@
                 <constraint firstItem="HzT-W2-tIT" firstAttribute="leading" secondItem="jM8-EC-Vbb" secondAttribute="leading" id="iaX-HN-hcZ"/>
             </constraints>
             <connections>
-                <outlet property="bottomLabel" destination="xDR-e6-A8l" id="Ujg-t6-lJO"/>
                 <outlet property="containerView" destination="HzT-W2-tIT" id="QHt-gE-11Z"/>
                 <outlet property="leadingContainerView" destination="XHX-qH-hZo" id="qam-AO-Ffm"/>
                 <outlet property="leadingImageView" destination="rsB-zB-9Lp" id="8bW-i0-H2E"/>
-                <outlet property="topLabel" destination="pLk-7A-x4t" id="b1m-m0-ihx"/>
+                <outlet property="navigationLabel" destination="pLk-7A-x4t" id="xNS-n2-4Pz"/>
                 <outlet property="trailingContainerView" destination="fik-Ls-6RF" id="YU9-v2-4my"/>
                 <outlet property="trailingImageView" destination="9hH-j6-RyH" id="Ev4-u7-n2R"/>
             </connections>

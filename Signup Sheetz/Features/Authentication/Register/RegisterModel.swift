@@ -15,11 +15,11 @@ class RegisterModel: Codable {
 }
 
 class RegisterData: Codable {
-    let token, firstName, lastName, organizationType: String?
+    let email, firstName, lastName, organizationType: String?
     let phone: String?
 
     enum CodingKeys: String, CodingKey {
-        case token
+        case email
         case firstName = "first_name"
         case lastName = "last_name"
         case organizationType = "organization_type"

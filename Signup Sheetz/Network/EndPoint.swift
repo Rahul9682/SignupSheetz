@@ -29,10 +29,13 @@ extension EndPoint {
 
 extension EndPoint {
     static var signup: Self {
-        EndPoint(path: "signup")
+        EndPoint(path: "auth/signup")
     }
     static var login: Self {
-        EndPoint(path: "login")
+        EndPoint(path: "auth/login")
+    }
+    static var logout: Self {
+        EndPoint(path: "logout")
     }
     static var forgotPasswordSentEmail: Self {
         EndPoint(path: "forgot-password-sentmail")
@@ -44,3 +47,4 @@ extension EndPoint {
         EndPoint(path: "reset-password")
     }
 }
+

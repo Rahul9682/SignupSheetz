@@ -42,6 +42,9 @@
 		C764D04F2D4CFE010085A3F8 /* MyEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C764D04E2D4CFE010085A3F8 /* MyEventViewController.swift */; };
 		C764D0512D4CFE110085A3F8 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C764D0502D4CFE110085A3F8 /* ProfileViewController.swift */; };
 		C764D0542D4CFE450085A3F8 /* CreateEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C764D0532D4CFE450085A3F8 /* CreateEventViewController.swift */; };
+		C79E72F22D5CCA0E00A59020 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C79E72F12D5CCA0E00A59020 /* HomeViewModel.swift */; };
+		C79E72F42D5CCA1700A59020 /* HomeDataservice.swift in Sources */ = {isa = PBXBuildFile; fileRef = C79E72F32D5CCA1700A59020 /* HomeDataservice.swift */; };
+		C79E72F62D5CCA2100A59020 /* HomeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C79E72F52D5CCA2100A59020 /* HomeModel.swift */; };
 		C7A58E962D4A15ED0008511C /* RegisterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7A58E952D4A15ED0008511C /* RegisterModel.swift */; };
 		C7A58E982D4A15FD0008511C /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7A58E972D4A15FD0008511C /* RegisterViewModel.swift */; };
 		C7CEC1892D4218A500EFECFB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7CEC1882D4218A500EFECFB /* AppDelegate.swift */; };
@@ -135,6 +138,9 @@
 		C764D04E2D4CFE010085A3F8 /* MyEventViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyEventViewController.swift; sourceTree = "<group>"; };
 		C764D0502D4CFE110085A3F8 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		C764D0532D4CFE450085A3F8 /* CreateEventViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateEventViewController.swift; sourceTree = "<group>"; };
+		C79E72F12D5CCA0E00A59020 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		C79E72F32D5CCA1700A59020 /* HomeDataservice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDataservice.swift; sourceTree = "<group>"; };
+		C79E72F52D5CCA2100A59020 /* HomeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeModel.swift; sourceTree = "<group>"; };
 		C7A58E952D4A15ED0008511C /* RegisterModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterModel.swift; sourceTree = "<group>"; };
 		C7A58E972D4A15FD0008511C /* RegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewModel.swift; sourceTree = "<group>"; };
 		C7CEC1852D4218A500EFECFB /* Signup Sheetz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Signup Sheetz.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -495,6 +501,9 @@
 			isa = PBXGroup;
 			children = (
 				C73BF0882D50D76A00E08318 /* Cell */,
+				C79E72F52D5CCA2100A59020 /* HomeModel.swift */,
+				C79E72F12D5CCA0E00A59020 /* HomeViewModel.swift */,
+				C79E72F32D5CCA1700A59020 /* HomeDataservice.swift */,
 				C7D74BC82D4BB38F004FA82C /* HomeViewController.swift */,
 			);
 			path = Home;
@@ -787,6 +796,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C79E72F62D5CCA2100A59020 /* HomeModel.swift in Sources */,
+				C79E72F42D5CCA1700A59020 /* HomeDataservice.swift in Sources */,
 				C7D74BB62D4B3C96004FA82C /* LoginDataservice.swift in Sources */,
 				C7CEC18D2D4218A500EFECFB /* LoginViewController.swift in Sources */,
 				C75979552D48A35000D015A4 /* RegisterViewController.swift in Sources */,
@@ -821,6 +832,7 @@
 				C73A369E2D475CC300A622DA /* CustomTextFieldView.swift in Sources */,
 				C73A36A22D47665700A622DA /* FontManager.swift in Sources */,
 				C7CEC1C12D421A0E00EFECFB /* EndPoint.swift in Sources */,
+				C79E72F22D5CCA0E00A59020 /* HomeViewModel.swift in Sources */,
 				C709A1152D5B7DAE00B04AB8 /* VerifyOTPViewModel.swift in Sources */,
 				C709A11D2D5B7E0100B04AB8 /* VerifyOTPViewController.swift in Sources */,
 				C7A58E982D4A15FD0008511C /* RegisterViewModel.swift in Sources */,

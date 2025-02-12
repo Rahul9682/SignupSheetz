@@ -14,7 +14,7 @@ enum ValidationError: LocalizedError, Error {
     /*-----------------------_SignUp_-----------------------*/
     case emptyFirstName,emptyLastName, invalidPassword, emptyPhone, emptyWorkType
     
-    case enterOTP
+    case enterOTP, emptyConfirmPassword, inValidConfirmPassword
     
     var errorDescription: String? {
         switch self {
@@ -38,6 +38,10 @@ enum ValidationError: LocalizedError, Error {
             return String.emptyWorktype
         case .enterOTP:
             return String.enterOTP
+        case .emptyConfirmPassword:
+            return String.emptyConfirmPassword
+        case .inValidConfirmPassword:
+            return String.inValidConfirmPassword
         }
     }
 }
@@ -46,4 +50,5 @@ enum TextFieldType {
     case loginEmail, loginPassword
     case forgotEmail
     case signupFirstName, signupLastName, signupEmail, signupPhoneNumber, signupPassword, signupWorkType
+    case resetPassword, resetConfirmPassword
 }

@@ -68,6 +68,9 @@ class LoginViewController: UIViewController {
         signInButtonView.dropShadow()
         appleSignInView.dropShadowForSocialLogin()
         googleSignInView.dropShadowForSocialLogin()
+        
+        let tap = UITapGestureRecognizer(target: self, action: #selector(closeKeyBoard))
+        view.addGestureRecognizer(tap)
     }
     
     func navigateToHome() {
@@ -109,7 +112,6 @@ extension LoginViewController: DelegateTextField {
         }
     }
 }
-
 
 //MARK: - VIEWMODEL INTERACTIONS
 extension LoginViewController {

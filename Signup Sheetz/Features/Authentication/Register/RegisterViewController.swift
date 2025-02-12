@@ -62,6 +62,9 @@ class RegisterViewController: UIViewController {
         
         alreadyHaveAccountLabel.font = FontManager.customFont(weight: .book, size: 15)
         setupSignInLabel()
+        
+        let tap = UITapGestureRecognizer(target: self, action: #selector(closeKeyBoard))
+        view.addGestureRecognizer(tap)
     }
     
     func configureTextField(_ view: CustomTextFieldView, icon: UIImage?, placeholder: String, textfieldType: TextFieldType,trailingIcon: UIImage? = nil) {

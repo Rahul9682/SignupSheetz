@@ -23,6 +23,7 @@ class HomeViewController: UIViewController {
     let cellSpacing: CGFloat = 8
     let leadingTrailingPadding: CGFloat = 16
     let itemCount = 10
+    private var viewModel = HomeViewModel()
     
     //MARK: - Life-Cycle-Methods
     override func viewDidLoad() {
@@ -48,9 +49,9 @@ class HomeViewController: UIViewController {
         eventTableView.register(UINib(nibName: "MyEventTableViewCell", bundle: nil), forCellReuseIdentifier: "MyEventTableViewCell")
         
         if let layout = categoryCollectionView?.collectionViewLayout as? UICollectionViewFlowLayout {
-                   layout.minimumInteritemSpacing = cellSpacing
-                   layout.minimumLineSpacing = cellSpacing
-               }
+            layout.minimumInteritemSpacing = cellSpacing
+            layout.minimumLineSpacing = cellSpacing
+        }
         searchTextField.attributedPlaceholder = NSAttributedString(
             string: "Search events...",
             attributes: [NSAttributedString.Key.foregroundColor: UIColor.init(hex: "747688")]
@@ -60,22 +61,37 @@ class HomeViewController: UIViewController {
     
     
     private func configureNavigation() {
+        let user = LocalStorage.getUserData()?.user
         let navigationBar = Bundle.main.loadNibNamed("CustomNavigationBar", owner: self, options: nil)?.first as? CustomNavigationBar
         navigationBar?.autoresizingMask = [.flexibleHeight, .flexibleWidth]
         navigationBar?.frame = self.navigationBar.bounds
-        navigationBar?.configureUI(with: UIImage.userPlaceholder, topLabelText: "Welcome", bottomLabelText: LocalStorage.getUserData()?.firstName, trailingImage: UIImage.bellIcon)
-      //  navigationBar?.notificationButton.isHidden = false
-      //  navigationBar?.backButton.isHidden = false
+        navigationBar?.configureUI(with: UIImage.userPlaceholder, topLabelText: "Welcome", bottomText: "\(user?.firstName ?? "") \(user?.lastName ?? "")", trailingImage: UIImage.bellIcon)
         navigationBar?.didClickSideMenuButton = {
             self.showYesOrNoAlert(with: "Log out", message: "Are you sure you want to log out?") { alert in
-                LocalStorage.deleteUserData()
-                let storyBoard = UIStoryboard(name: "Main", bundle: nil)
-                let vc = storyBoard.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
-                self.navigationController?.pushViewController(vc, animated: false)
+                self.logout()
             }
         }
         navigationBar?.didClickNotificationButton = {}
         self.navigationBar.addSubview(navigationBar!)
+    }
+}
+
+//MARK: - VIEWMODEL INTERACTIONS
+extension HomeViewController {
+    private func logout() {
+        self.viewModel.logout { result in
+            switch result {
+            case .success(let message):
+                LocalStorage.deleteUserData()
+                let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+                let vc = storyBoard.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
+                self.navigationController?.pushViewController(vc, animated: false)
+            case .failure(let error):
+                self.showOKAlert(with: "Error", and: error.localizedDescription) { alert in
+                    
+                }
+            }
+        }
     }
 }
 
@@ -90,25 +106,25 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
         return cell
     }
     
-//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-//        return UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
-//    }
+    //    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+    //        return UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+    //    }
     
-//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForItemAt indexPath: IndexPath) -> UIEdgeInsets {
-//        if indexPath.row == 0 {
-//            return UIEdgeInsets(top: 0, left: leadingTrailingPadding, bottom: 0, right: cellSpacing / 2)
-//        } else if indexPath.row == itemCount - 1 {
-//            return UIEdgeInsets(top: 0, left: cellSpacing / 2, bottom: 0, right: leadingTrailingPadding)
-//        } else {
-//            return UIEdgeInsets(top: 0, left: cellSpacing / 2, bottom: 0, right: cellSpacing / 2)
-//        }
-//    }
-//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-//        return CGSize(width: 150, height: 60)
-//    }
+    //    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForItemAt indexPath: IndexPath) -> UIEdgeInsets {
+    //        if indexPath.row == 0 {
+    //            return UIEdgeInsets(top: 0, left: leadingTrailingPadding, bottom: 0, right: cellSpacing / 2)
+    //        } else if indexPath.row == itemCount - 1 {
+    //            return UIEdgeInsets(top: 0, left: cellSpacing / 2, bottom: 0, right: leadingTrailingPadding)
+    //        } else {
+    //            return UIEdgeInsets(top: 0, left: cellSpacing / 2, bottom: 0, right: cellSpacing / 2)
+    //        }
+    //    }
+    //    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+    //        return CGSize(width: 150, height: 60)
+    //    }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-            return UIEdgeInsets(top: 0, left: leadingTrailingPadding, bottom: 0, right: leadingTrailingPadding)
-        }
+        return UIEdgeInsets(top: 0, left: leadingTrailingPadding, bottom: 0, right: leadingTrailingPadding)
+    }
 }
 
 //MARK: -  UITableViewDelegate,UITableViewDataSource
@@ -122,6 +138,4 @@ extension HomeViewController: UITableViewDelegate,UITableViewDataSource {
         
         return cell
     }
-    
-    
 }

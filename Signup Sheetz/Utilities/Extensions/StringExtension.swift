@@ -19,6 +19,8 @@ extension String {
     static let validPassword = "Please Enter Valid Password"
     static let inValidPassword = "Password must be at least 8 characters long and include at least one uppercase letter, one number, and one special character"
     static let enterOTP = "Please enter the 4 digit OTP"
+    static let emptyConfirmPassword = "Please confirm your password before proceed"
+    static let inValidConfirmPassword = "Passwords doesn't match, please confirm password correctly"
     
     //_Methods
     func isValidEmail() -> Bool {

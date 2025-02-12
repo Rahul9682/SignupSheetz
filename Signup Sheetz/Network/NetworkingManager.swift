@@ -45,14 +45,18 @@ class NetworkingManager {
         print("URL: \(endPoint.url)")
         var request = URLRequest(url: endPoint.url)
         request.httpMethod = httpMethod.value
-        //        if let accessToken = Constants.getUser()?.token as? String {
-        //            request.allHTTPHeaderFields = ["Content-Type": "application/json",
-        //                                           "X-Requested-With": "XMLHttpRequest", "Authorization": "Bearer \(accessToken)"]
-        //        } else {
-        request.allHTTPHeaderFields = ["Content-Type": "application/json",
-                                       "accept": "*/*"
-        ]
-        //        }
+        if let accessToken = LocalStorage.getUserData()?.token as? String {
+            request.allHTTPHeaderFields = [
+                "Content-Type": "application/json",
+                "X-Requested-With": "XMLHttpRequest",
+                "Authorization": "Bearer \(accessToken)"
+            ]
+        } else {
+            request.allHTTPHeaderFields = [
+                "Content-Type": "application/json",
+                "accept": "*/*"
+            ]
+        }
         
         if let body = body,
            let httpBody = try? JSONSerialization.data(withJSONObject: body, options: .fragmentsAllowed) {

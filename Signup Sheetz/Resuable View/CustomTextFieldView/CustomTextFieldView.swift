@@ -40,7 +40,7 @@ class CustomTextFieldView: UIView {
         textField.placeholder = placeholder
         textField.font = FontManager.customFont(weight: fontWeight, size: fontSize)
         switch delegateTextfieldType {
-        case .loginPassword, .signupPassword:
+        case .loginPassword, .signupPassword, .resetPassword, .resetConfirmPassword:
             textField.isSecureTextEntry = true
             textField.returnKeyType = .done
 
@@ -66,14 +66,12 @@ class CustomTextFieldView: UIView {
     }
     
     @IBAction func showPasswordAction(_ sender: Any) {
-        guard delegateTextfieldType == .loginPassword || delegateTextfieldType == .signupPassword else {
+        guard delegateTextfieldType == .loginPassword || delegateTextfieldType == .signupPassword || delegateTextfieldType == .resetPassword || delegateTextfieldType == .resetConfirmPassword else {
                 return
             }
             textField.isSecureTextEntry.toggle()
             let image = textField.isSecureTextEntry ? UIImage(systemName: "eye.slash") : UIImage(systemName: "eye")
             trailingImageView.image = image
     }
-    
-    
     
 }
