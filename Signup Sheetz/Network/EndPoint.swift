@@ -28,6 +28,7 @@ extension EndPoint {
 }
 
 extension EndPoint {
+    // MARK :- AUTHENTICATION
     static var signup: Self {
         EndPoint(path: "auth/signup")
     }
@@ -45,6 +46,16 @@ extension EndPoint {
     }
     static var resetPassword: Self {
         EndPoint(path: "reset-password")
+    }
+    // MARK :- HOME
+    static var eventListing: Self {
+        EndPoint(path: "event-listing")
+    }
+    static var categoryListing: Self {
+        EndPoint(path: "category-listing")
+    }
+    static func subCategory(to eventId: String) -> Self {
+        EndPoint(path: "event-detail", queryItems: [URLQueryItem(name: "id", value: eventId)])
     }
 }
 

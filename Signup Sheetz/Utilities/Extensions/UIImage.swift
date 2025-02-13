@@ -22,6 +22,8 @@ extension UIImage {
     static let addEventRedIcon = UIImage(named: "add_event_icon")
     static let eventTabIcon = UIImage(named: "Category")
     static let profileTabIcon = UIImage(named: "Profile")
+    //
+    static let noDataImage = UIImage(named: "no_data_found")
 }
 
 extension UIView {

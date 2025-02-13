@@ -1,14 +1,14 @@
 //
-//  HomeDataservice.swift
+//  ProfileDataservice.swift
 //  Signup Sheetz
 //
-//  Created by Mohammad Kaif on 12/02/25.
+//  Created by Mohammad Kaif on 13/02/25.
 //
 
 import Foundation
 import Combine
 
-class HomeDataService {
+class ProfileDataService {
     @Published var logutModel: ForgotPasswordModel?
     var cancellables: AnyCancellable?
     
@@ -30,3 +30,4 @@ class HomeDataService {
             })
     }
 }
+

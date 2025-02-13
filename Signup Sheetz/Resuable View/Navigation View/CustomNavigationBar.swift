@@ -43,7 +43,7 @@ class CustomNavigationBar: UIView {
         let attributedString = NSMutableAttributedString(string: fullText)
         
         let welcomeRange = (fullText as NSString).range(of: "\(topLabelText)")
-        attributedString.addAttribute(.foregroundColor, value: UIColor(hex: "F3F3F3"), range: welcomeRange)
+        attributedString.addAttribute(.foregroundColor, value: UIColor(hex: "FEFEFE"), range: welcomeRange)
         attributedString.addAttribute(.font, value: FontManager.customFont(weight: .book, size: 12), range: welcomeRange)
         
         let nameRange = (fullText as NSString).range(of: "\(bottomText)")

@@ -50,6 +50,10 @@ extension String {
             return false
         }
     }
+    
+    func shortURL() -> String {
+        return self.replacingOccurrences(of: "\\//", with: "//")
+    }
 }
 
 

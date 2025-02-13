@@ -10,7 +10,6 @@ import UIKit
 class CategoryCollectionViewCell: UICollectionViewCell {
     
     //MARK: - Outlet's
-
     @IBOutlet weak var cateImage: UIImageView!
     @IBOutlet weak var cateName: UILabel!
     @IBOutlet weak var containerView: UIView!
@@ -33,7 +32,11 @@ class CategoryCollectionViewCell: UICollectionViewCell {
         cateName.font = FontManager.customFont(weight: .book, size: 14)
         cateName.textColor = UIColor.init(hex: "747688")
     }
-
+    
+    func configureUI(with data: CategoryData) {
+        cateName.text = data.name ?? ""
+        cateImage.networkImageWithoutPlaceholder(with: data.imageURL)
+    }
 }
 
 

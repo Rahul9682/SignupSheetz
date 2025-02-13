@@ -113,11 +113,9 @@ class RegisterViewController: UIViewController {
         self.navigationController?.popViewController(animated: true)
     }
     
-    
     @IBAction func signUpAction(_ sender: Any) {
         userRegister()
     }
-    
     
     @IBAction func showDropDownAction(_ sender: Any) {
         dropDown.show()
@@ -134,7 +132,7 @@ class RegisterViewController: UIViewController {
 //MARK: - VIEWMODEL INTERACTIONS
 extension RegisterViewController {
     private func userRegister() {
-        var signupData = SignupData(firstName: firstName, lastName: lastName, organizationType: workType, email: email, phone: phone, password: password)
+        var signupData = SignupData(firstName: firstName.trimmingCharacters(in: .whitespacesAndNewlines), lastName: lastName.trimmingCharacters(in: .whitespacesAndNewlines), organizationType: workType.trimmingCharacters(in: .whitespacesAndNewlines), email: email.trimmingCharacters(in: .whitespacesAndNewlines), phone: phone.trimmingCharacters(in: .whitespacesAndNewlines), password: password.trimmingCharacters(in: .whitespacesAndNewlines))
         viewModel = RegisterViewModel(signupData: signupData)
         viewModel.validate { result in
             switch result {

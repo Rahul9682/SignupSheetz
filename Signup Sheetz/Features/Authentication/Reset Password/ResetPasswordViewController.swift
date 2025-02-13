@@ -9,6 +9,7 @@ import UIKit
 
 class ResetPasswordViewController: UIViewController {
     
+    @IBOutlet weak var pageTitleLabel: UILabel!
     @IBOutlet weak var passwordView: CustomTextFieldView!
     @IBOutlet weak var confirmPasswordView: CustomTextFieldView!
     @IBOutlet weak var sendButtonView: UIView!
@@ -25,6 +26,7 @@ class ResetPasswordViewController: UIViewController {
         sendButtonView.layer.cornerRadius = 16
         sendButtonView.dropShadowForSocialLogin()
         goBackLabel.font = FontManager.customFont(weight: .book, size: 15)
+        pageTitleLabel.font = FontManager.customFont(weight: .medium, size: 24)
         
         let fullText = "Go back to Previous page"
         let customColor = UIColor(red: 206/255, green: 189/255, blue: 14/255, alpha: 1.0)
@@ -49,6 +51,10 @@ class ResetPasswordViewController: UIViewController {
         textFieldView?.delegateTextField = self
         textFieldView?.configure(icon: icon, placeholder: placeholder,fontWeight: .light, fontSize: 14, trailingIcon: trailingIcon)
         view.addSubview(textFieldView!)
+    }
+    
+    @IBAction func didClickBackButton(_ sender: UIButton) {
+        self.navigationController?.popViewController(animated: true)
     }
     
     @IBAction func didClickSendForForReset(_ sender: UIControl) {
@@ -78,7 +84,7 @@ extension ResetPasswordViewController: DelegateTextField {
 //MARK: - VIEWMODEL INTERACTIONS
 extension ResetPasswordViewController {
     private func resetPassword() {
-        viewModel = ResetPasswordViewModel(email: self.email, password: self.password, confirmPassword: self.confirmPassword)
+        viewModel = ResetPasswordViewModel(email: self.email.trimmingCharacters(in: .whitespacesAndNewlines), password: self.password.trimmingCharacters(in: .whitespacesAndNewlines), confirmPassword: self.confirmPassword.trimmingCharacters(in: .whitespacesAndNewlines))
         
         viewModel.validation { result in
             switch result {

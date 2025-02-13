@@ -9,6 +9,7 @@ import UIKit
 
 class VerifyOTPViewController: UIViewController {
     
+    @IBOutlet weak var pageTitleLabel: UILabel!
     @IBOutlet weak var sendButtonView: UIView!
     @IBOutlet weak var goBackLabel: UILabel!
     @IBOutlet weak var verifyDescriptionLabel: UILabel!
@@ -33,6 +34,7 @@ class VerifyOTPViewController: UIViewController {
         sendButtonView.layer.cornerRadius = 16
         sendButtonView.dropShadowForSocialLogin()
         goBackLabel.font = FontManager.customFont(weight: .book, size: 15)
+        pageTitleLabel.font = FontManager.customFont(weight: .medium, size: 24)
         
         let fullText = "Go back to Previous page"
         let customColor = UIColor(red: 206/255, green: 189/255, blue: 14/255, alpha: 1.0)
@@ -49,7 +51,7 @@ class VerifyOTPViewController: UIViewController {
         verifyDescriptionLabel.attributedText = attributedDescription
         verifyDescriptionLabel.font = FontManager.customFont(weight: .book, size: 15)
         
-        let fullDisclaimer = "Can't Find Code?\nIf you do not see the email within few minutes, check your 'junk mail' folder or 'spam' folder. We make evry effort to ensure that these emails to be delivered."
+        let fullDisclaimer = "Can't Find Code?\nIf you do not see the email within few minutes, check your 'junk mail' folder or 'spam' folder. We make every effort to ensure that these emails to be delivered."
         let disclaimerTextColor = UIColor(red: 206/255, green: 189/255, blue: 14/255, alpha: 1.0)
         let attributedDisclaimer = NSMutableAttributedString(string: fullDisclaimer)
         let disclaimerRange = (fullDisclaimer as NSString).range(of: "Can't Find Code?")
@@ -61,6 +63,11 @@ class VerifyOTPViewController: UIViewController {
         otpTextfield2.delegate = self
         otpTextfield3.delegate = self
         otpTextfield4.delegate = self
+        
+        otpTextfield1.keyboardType = .numberPad
+        otpTextfield2.keyboardType = .numberPad
+        otpTextfield3.keyboardType = .numberPad
+        otpTextfield4.keyboardType = .numberPad
         
         otpTextfield1.layer.borderColor = UIColor.black.cgColor
         otpTextfield2.layer.borderColor = UIColor.black.cgColor
@@ -148,6 +155,10 @@ class VerifyOTPViewController: UIViewController {
         }
     }
     
+    @IBAction func didClickBackButton(_ sender: UIButton) {
+        self.navigationController?.popViewController(animated: true)
+    }
+    
     @IBAction func didClickGoBack(_ sender: UIButton) {
         self.navigationController?.popViewController(animated: true)
     }
@@ -203,7 +214,7 @@ extension VerifyOTPViewController :UITextFieldDelegate {
 //MARK: - VIEWMODEL INTERACTIONS
 extension VerifyOTPViewController {
     private func verifyOTP() {
-        viewModel = VerifyOTPViewModel(email: self.email, otp: self.otp)
+        viewModel = VerifyOTPViewModel(email: self.email.trimmingCharacters(in: .whitespacesAndNewlines), otp: self.otp.trimmingCharacters(in: .whitespacesAndNewlines))
         viewModel.validation { result in
             switch result {
             case .success(_):

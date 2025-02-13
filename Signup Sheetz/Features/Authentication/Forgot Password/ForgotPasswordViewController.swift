@@ -9,6 +9,7 @@ import UIKit
 
 class ForgotPasswordViewController: UIViewController {
 
+    @IBOutlet weak var pageTitleLabel: UILabel!
     @IBOutlet weak var emailView: CustomTextFieldView!
     @IBOutlet weak var sendButtonView: UIView!
     @IBOutlet weak var goBackSingInLabel: UILabel!
@@ -22,6 +23,7 @@ class ForgotPasswordViewController: UIViewController {
         sendButtonView.layer.cornerRadius = 16
         sendButtonView.dropShadowForSocialLogin()
         goBackSingInLabel.font = FontManager.customFont(weight: .book, size: 15)
+        pageTitleLabel.font = FontManager.customFont(weight: .medium, size: 24)
         
         let fullText = "Go back to Sign In"
         let customColor = UIColor(red: 206/255, green: 189/255, blue: 14/255, alpha: 1.0)
@@ -44,6 +46,10 @@ class ForgotPasswordViewController: UIViewController {
         textFieldView?.delegateTextField = self
         textFieldView?.configure(icon: icon, placeholder: placeholder,fontWeight: .light, fontSize: 14, trailingIcon: trailingIcon)
         view.addSubview(textFieldView!)
+    }
+    
+    @IBAction func didClickBackButton(_ sender: UIButton) {
+        self.navigationController?.popViewController(animated: true)
     }
     
     @IBAction func didClickBackToLogin(_ sender: Any) {

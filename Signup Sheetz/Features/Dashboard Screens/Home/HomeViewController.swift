@@ -16,28 +16,33 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var eventTableView: UITableView!
     @IBOutlet weak var searchTextField: UITextField!
     @IBOutlet weak var navigationBar: CustomNavigationBar!
+    @IBOutlet weak var categoriesLabel: UILabel!
     @IBOutlet weak var upComingLabel: UILabel!
     @IBOutlet weak var segmentedControl: UISegmentedControl!
+    @IBOutlet weak var backgroundView: BackgroundView!
     
     //MARK: - Properties
     let cellSpacing: CGFloat = 8
     let leadingTrailingPadding: CGFloat = 16
-    let itemCount = 10
     private var viewModel = HomeViewModel()
+    var background: BackgroundView?
     
     //MARK: - Life-Cycle-Methods
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
-        
+        getCategories()
     }
     
     //MARK: - Helpers
     func setupView() {
-        containerView.layer.cornerRadius = 30
+        containerView.layer.cornerRadius = 32
         searchbarView.layer.cornerRadius = 10
         searchbarView.layer.borderWidth = 1
         searchbarView.layer.borderColor = UIColor.init(hex: "E4DFDF")?.cgColor
+        
+        upComingLabel.font = FontManager.customFont(weight: .medium, size: 16)
+        categoriesLabel.font = FontManager.customFont(weight: .medium, size: 16)
         
         categoryCollectionView.delegate = self
         categoryCollectionView.dataSource = self
@@ -66,30 +71,34 @@ class HomeViewController: UIViewController {
         navigationBar?.autoresizingMask = [.flexibleHeight, .flexibleWidth]
         navigationBar?.frame = self.navigationBar.bounds
         navigationBar?.configureUI(with: UIImage.userPlaceholder, topLabelText: "Welcome", bottomText: "\(user?.firstName ?? "") \(user?.lastName ?? "")", trailingImage: UIImage.bellIcon)
-        navigationBar?.didClickSideMenuButton = {
-            self.showYesOrNoAlert(with: "Log out", message: "Are you sure you want to log out?") { alert in
-                self.logout()
-            }
-        }
+        navigationBar?.didClickSideMenuButton = {}
         navigationBar?.didClickNotificationButton = {}
         self.navigationBar.addSubview(navigationBar!)
     }
-}
-
-//MARK: - VIEWMODEL INTERACTIONS
-extension HomeViewController {
-    private func logout() {
-        self.viewModel.logout { result in
-            switch result {
-            case .success(let message):
-                LocalStorage.deleteUserData()
-                let storyBoard = UIStoryboard(name: "Main", bundle: nil)
-                let vc = storyBoard.instantiateViewController(withIdentifier: "LoginViewController") as! LoginViewController
-                self.navigationController?.pushViewController(vc, animated: false)
-            case .failure(let error):
-                self.showOKAlert(with: "Error", and: error.localizedDescription) { alert in
-                    
+    
+    //MARK: CONFIGURE BACKGROUND
+    private func configureBackground(with image: UIImage?, message: String?, count: Int, isButtonEnable: Bool) {
+        DispatchQueue.main.async { [self] in
+            if count == 0 {
+                if self.background == nil {
+                    self.background = Bundle.main.loadNibNamed("BackgroundView", owner: self, options: nil)?.first as? BackgroundView
+                    self.background?.autoresizingMask = [.flexibleHeight, .flexibleWidth]
+                    self.background?.frame = self.backgroundView.bounds
+                    self.background?.configureUI(with: image, message: message, isButtonEnable: isButtonEnable)
                 }
+                self.eventTableView.isHidden = true
+                self.backgroundView.backgroundColor = UIColor.white
+                self.backgroundView.addSubview(self.background!)
+            } else {
+                if self.background != nil {
+                    self.background?.removeFromSuperview()
+                }
+                self.eventTableView.isHidden = false
+                self.backgroundView.backgroundColor = UIColor.customGrayColor()
+                self.eventTableView.reloadData()
+            }
+            self.background?.didClickRefreshButton = {
+                getCategories()
             }
         }
     }
@@ -98,30 +107,17 @@ extension HomeViewController {
 //MARK: - UICollectionViewDelegate, UICollectionViewDataSource
 extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSource,UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return itemCount
+        return self.viewModel.arrayOfCategories?.count ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CategoryCollectionViewCell", for: indexPath) as! CategoryCollectionViewCell
+        if let category = self.viewModel.arrayOfCategories?[indexPath.row] {
+            cell.configureUI(with: category)
+        }
         return cell
     }
     
-    //    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-    //        return UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
-    //    }
-    
-    //    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForItemAt indexPath: IndexPath) -> UIEdgeInsets {
-    //        if indexPath.row == 0 {
-    //            return UIEdgeInsets(top: 0, left: leadingTrailingPadding, bottom: 0, right: cellSpacing / 2)
-    //        } else if indexPath.row == itemCount - 1 {
-    //            return UIEdgeInsets(top: 0, left: cellSpacing / 2, bottom: 0, right: leadingTrailingPadding)
-    //        } else {
-    //            return UIEdgeInsets(top: 0, left: cellSpacing / 2, bottom: 0, right: cellSpacing / 2)
-    //        }
-    //    }
-    //    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-    //        return CGSize(width: 150, height: 60)
-    //    }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         return UIEdgeInsets(top: 0, left: leadingTrailingPadding, bottom: 0, right: leadingTrailingPadding)
     }
@@ -130,12 +126,42 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
 //MARK: -  UITableViewDelegate,UITableViewDataSource
 extension HomeViewController: UITableViewDelegate,UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return self.viewModel.arrayOfEvents?.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "MyEventTableViewCell", for: indexPath) as! MyEventTableViewCell
-        
+        if let event = self.viewModel.arrayOfEvents?[indexPath.row] {
+            cell.configureUI(with: event)
+        }
         return cell
+    }
+}
+
+//MARK: - VIEWMODEL INTERACTIONS
+extension HomeViewController {    
+    private func getCategories() {
+        self.viewModel.getCategories { result in
+            switch result {
+            case .success(_):
+                self.categoryCollectionView.reloadData()
+                self.getEvents()
+            case .failure(let error):
+                self.getEvents()
+            }
+        }
+    }
+    
+    private func getEvents() {
+        self.viewModel.getEvents { result in
+            switch result {
+            case .success(let message):
+                if let count = self.viewModel.arrayOfEvents?.count {
+                    self.configureBackground(with: UIImage.noDataFound, message: message, count: count, isButtonEnable: true)
+                }
+            case .failure(let error):
+                self.configureBackground(with: UIImage.noDataFound, message: error.localizedDescription, count: 0, isButtonEnable: true)
+            }
+        }
     }
 }

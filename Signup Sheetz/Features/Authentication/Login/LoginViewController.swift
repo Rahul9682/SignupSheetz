@@ -116,7 +116,7 @@ extension LoginViewController: DelegateTextField {
 //MARK: - VIEWMODEL INTERACTIONS
 extension LoginViewController {
     private func userLogin() {
-        let loginRequestData = LoginRequestData(email: email, password: password)
+        let loginRequestData = LoginRequestData(email: email.trimmingCharacters(in: .whitespacesAndNewlines), password: password.trimmingCharacters(in: .whitespacesAndNewlines))
         viewModel = LoginViewModel(loginData: loginRequestData)
         
         viewModel.validation { result in
