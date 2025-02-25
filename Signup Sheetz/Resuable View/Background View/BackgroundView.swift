@@ -33,7 +33,8 @@ class BackgroundView: UIView {
     func configureUI(with backgroundImageName: UIImage?, color: UIColor = .clear, message: String?, isButtonEnable: Bool = false) {
         containerView.backgroundColor = color
         backgroundImageView.image = backgroundImageName
-        errorDescLabel.text = "No Data Found !!"
+        errorDescLabel.text = message
+        errorDescLabel.textAlignment = .center
         refreshButton.setTitleColor(UIColor.white, for: .normal)
         refreshButton.backgroundColor = UIColor.blue
         refreshButton.setTitle("  Refresh  ", for: .normal)

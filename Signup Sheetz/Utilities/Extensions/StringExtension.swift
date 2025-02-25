@@ -22,6 +22,9 @@ extension String {
     static let emptyConfirmPassword = "Please confirm your password before proceed"
     static let inValidConfirmPassword = "Passwords doesn't match, please confirm password correctly"
     
+    static let emptyOldPassword = "Please enter the old password"
+    static let emptyNewPassword = "Please enter the new password"
+    
     //_Methods
     func isValidEmail() -> Bool {
         let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"

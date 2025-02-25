@@ -16,7 +16,8 @@ extension EndPoint {
     var url: URL {
         var components = URLComponents()
         components.scheme = "https"
-        components.host = "laravel9.etrueconcept.com"
+        //components.host = "laravel9.etrueconcept.com"
+        components.host = "bt.etrueconcept.com"
         components.path = "/sheetz/api/" + path
         // components.path = "/signupsheetz/api/" + path
         if !queryItems.isEmpty {
@@ -47,6 +48,12 @@ extension EndPoint {
     static var resetPassword: Self {
         EndPoint(path: "reset-password")
     }
+    static var changePassword: Self {
+        EndPoint(path: "change-password")
+    }
+    static var editProfile: Self {
+        EndPoint(path: "edit-profile")
+    }
     // MARK :- HOME
     static var eventListing: Self {
         EndPoint(path: "event-listing")
@@ -54,8 +61,10 @@ extension EndPoint {
     static var categoryListing: Self {
         EndPoint(path: "category-listing")
     }
-    static func subCategory(to eventId: String) -> Self {
+    static func eventDetail(with eventId: String) -> Self {
         EndPoint(path: "event-detail", queryItems: [URLQueryItem(name: "id", value: eventId)])
     }
 }
+
+
 

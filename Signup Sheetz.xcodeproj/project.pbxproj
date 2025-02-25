@@ -61,6 +61,14 @@
 		C79E72F62D5CCA2100A59020 /* HomeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C79E72F52D5CCA2100A59020 /* HomeModel.swift */; };
 		C7A58E962D4A15ED0008511C /* RegisterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7A58E952D4A15ED0008511C /* RegisterModel.swift */; };
 		C7A58E982D4A15FD0008511C /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7A58E972D4A15FD0008511C /* RegisterViewModel.swift */; };
+		C7AEDB5E2D5F487D0084059F /* EditProfileModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7AEDB5D2D5F487D0084059F /* EditProfileModel.swift */; };
+		C7AEDB602D5F48870084059F /* EditProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7AEDB5F2D5F48870084059F /* EditProfileViewModel.swift */; };
+		C7AEDB622D5F48930084059F /* EditProfileDataservice.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7AEDB612D5F48930084059F /* EditProfileDataservice.swift */; };
+		C7AEDB642D5F48CB0084059F /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7AEDB632D5F48CB0084059F /* EditProfileViewController.swift */; };
+		C7AEDB672D5F56040084059F /* ChangePasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7AEDB662D5F56040084059F /* ChangePasswordViewController.swift */; };
+		C7AEDB692D5F5A650084059F /* ChangePasswordModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7AEDB682D5F5A650084059F /* ChangePasswordModel.swift */; };
+		C7AEDB6B2D5F5A6F0084059F /* ChangePasswordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7AEDB6A2D5F5A6F0084059F /* ChangePasswordViewModel.swift */; };
+		C7AEDB6D2D5F5A780084059F /* ChangePasswordDataservice.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7AEDB6C2D5F5A780084059F /* ChangePasswordDataservice.swift */; };
 		C7CEC1892D4218A500EFECFB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7CEC1882D4218A500EFECFB /* AppDelegate.swift */; };
 		C7CEC18B2D4218A500EFECFB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7CEC18A2D4218A500EFECFB /* SceneDelegate.swift */; };
 		C7CEC18D2D4218A500EFECFB /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7CEC18C2D4218A500EFECFB /* LoginViewController.swift */; };
@@ -171,6 +179,14 @@
 		C79E72F52D5CCA2100A59020 /* HomeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeModel.swift; sourceTree = "<group>"; };
 		C7A58E952D4A15ED0008511C /* RegisterModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterModel.swift; sourceTree = "<group>"; };
 		C7A58E972D4A15FD0008511C /* RegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewModel.swift; sourceTree = "<group>"; };
+		C7AEDB5D2D5F487D0084059F /* EditProfileModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileModel.swift; sourceTree = "<group>"; };
+		C7AEDB5F2D5F48870084059F /* EditProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewModel.swift; sourceTree = "<group>"; };
+		C7AEDB612D5F48930084059F /* EditProfileDataservice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileDataservice.swift; sourceTree = "<group>"; };
+		C7AEDB632D5F48CB0084059F /* EditProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
+		C7AEDB662D5F56040084059F /* ChangePasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordViewController.swift; sourceTree = "<group>"; };
+		C7AEDB682D5F5A650084059F /* ChangePasswordModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordModel.swift; sourceTree = "<group>"; };
+		C7AEDB6A2D5F5A6F0084059F /* ChangePasswordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordViewModel.swift; sourceTree = "<group>"; };
+		C7AEDB6C2D5F5A780084059F /* ChangePasswordDataservice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordDataservice.swift; sourceTree = "<group>"; };
 		C7CEC1852D4218A500EFECFB /* Signup Sheetz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Signup Sheetz.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C7CEC1882D4218A500EFECFB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C7CEC18A2D4218A500EFECFB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -261,6 +277,8 @@
 				C709A1032D5B527300B04AB8 /* Forgot Password */,
 				C709A10E2D5B7B6600B04AB8 /* Verify OTP */,
 				C709A10F2D5B7B7100B04AB8 /* Reset Password */,
+				C7AEDB5C2D5F48690084059F /* Edit Profile */,
+				C7AEDB652D5F49610084059F /* Change Password */,
 			);
 			path = Authentication;
 			sourceTree = "<group>";
@@ -437,6 +455,28 @@
 				C77091FF2D5E1631002E9994 /* LogoutTableViewCell.xib */,
 			);
 			path = Cell;
+			sourceTree = "<group>";
+		};
+		C7AEDB5C2D5F48690084059F /* Edit Profile */ = {
+			isa = PBXGroup;
+			children = (
+				C7AEDB5D2D5F487D0084059F /* EditProfileModel.swift */,
+				C7AEDB5F2D5F48870084059F /* EditProfileViewModel.swift */,
+				C7AEDB612D5F48930084059F /* EditProfileDataservice.swift */,
+				C7AEDB632D5F48CB0084059F /* EditProfileViewController.swift */,
+			);
+			path = "Edit Profile";
+			sourceTree = "<group>";
+		};
+		C7AEDB652D5F49610084059F /* Change Password */ = {
+			isa = PBXGroup;
+			children = (
+				C7AEDB682D5F5A650084059F /* ChangePasswordModel.swift */,
+				C7AEDB6A2D5F5A6F0084059F /* ChangePasswordViewModel.swift */,
+				C7AEDB6C2D5F5A780084059F /* ChangePasswordDataservice.swift */,
+				C7AEDB662D5F56040084059F /* ChangePasswordViewController.swift */,
+			);
+			path = "Change Password";
 			sourceTree = "<group>";
 		};
 		C7CEC17C2D4218A500EFECFB = {
@@ -873,6 +913,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C7AEDB602D5F48870084059F /* EditProfileViewModel.swift in Sources */,
 				C79E72F62D5CCA2100A59020 /* HomeModel.swift in Sources */,
 				C79E72F42D5CCA1700A59020 /* HomeDataservice.swift in Sources */,
 				C7D74BB62D4B3C96004FA82C /* LoginDataservice.swift in Sources */,
@@ -882,6 +923,7 @@
 				C7F830052D4A3137008EB7D2 /* ValidationEnum.swift in Sources */,
 				C73BF08E2D50D7B400E08318 /* CategoryCollectionViewCell.swift in Sources */,
 				C77091FD2D5E100D002E9994 /* ProfileDetailTableViewCell.swift in Sources */,
+				C7AEDB692D5F5A650084059F /* ChangePasswordModel.swift in Sources */,
 				C77091F02D5DDBB8002E9994 /* EventDetailViewModel.swift in Sources */,
 				C7D74BBC2D4B46B3004FA82C /* Keys.swift in Sources */,
 				C73BF0872D50C54900E08318 /* UIColorExtension.swift in Sources */,
@@ -916,6 +958,8 @@
 				C7D74BB42D4B3C6D004FA82C /* LoginViewModel.swift in Sources */,
 				C7D74BC62D4BB33E004FA82C /* CustomTabBarController.swift in Sources */,
 				C73A369E2D475CC300A622DA /* CustomTextFieldView.swift in Sources */,
+				C7AEDB642D5F48CB0084059F /* EditProfileViewController.swift in Sources */,
+				C7AEDB672D5F56040084059F /* ChangePasswordViewController.swift in Sources */,
 				C73A36A22D47665700A622DA /* FontManager.swift in Sources */,
 				C7CEC1C12D421A0E00EFECFB /* EndPoint.swift in Sources */,
 				C79E72F22D5CCA0E00A59020 /* HomeViewModel.swift in Sources */,
@@ -923,10 +967,14 @@
 				C77092032D5E1792002E9994 /* ProfileDataservice.swift in Sources */,
 				C709A11D2D5B7E0100B04AB8 /* VerifyOTPViewController.swift in Sources */,
 				C7A58E982D4A15FD0008511C /* RegisterViewModel.swift in Sources */,
+				C7AEDB6D2D5F5A780084059F /* ChangePasswordDataservice.swift in Sources */,
 				C7D74BB22D4B3C4D004FA82C /* LoginModel.swift in Sources */,
+				C7AEDB5E2D5F487D0084059F /* EditProfileModel.swift in Sources */,
 				C7A58E962D4A15ED0008511C /* RegisterModel.swift in Sources */,
 				C7CEC1892D4218A500EFECFB /* AppDelegate.swift in Sources */,
+				C7AEDB6B2D5F5A6F0084059F /* ChangePasswordViewModel.swift in Sources */,
 				C764D0472D4CDE9A0085A3F8 /* ExampleIrregularityContentView.swift in Sources */,
+				C7AEDB622D5F48930084059F /* EditProfileDataservice.swift in Sources */,
 				C7CEC18B2D4218A500EFECFB /* SceneDelegate.swift in Sources */,
 				C709A10B2D5B52CB00B04AB8 /* ForgotPasswordDataservice.swift in Sources */,
 				C7D74BB82D4B45FE004FA82C /* UserDefaultsHelper.swift in Sources */,

@@ -17,7 +17,7 @@ class EventDataModel: Codable {
 
 class EventData: Codable {
     let id: Int?
-    let name, slug, eventDate, address: String?
+    let name, slug, startTime, eventDate, address: String?
     let description, image, status: String?
     let categoryID: Int?
     let createdAt, updatedAt: String?
@@ -25,6 +25,7 @@ class EventData: Codable {
 
     enum CodingKeys: String, CodingKey {
         case id, name, slug
+        case startTime = "start_time"
         case eventDate = "event_date"
         case address, description, image, status
         case categoryID = "category_id"

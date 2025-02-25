@@ -59,7 +59,7 @@ class HomeViewController: UIViewController {
         }
         searchTextField.attributedPlaceholder = NSAttributedString(
             string: "Search events...",
-            attributes: [NSAttributedString.Key.foregroundColor: UIColor.init(hex: "747688")]
+            attributes: [NSAttributedString.Key.foregroundColor: UIColor.init(hex: "747688") as Any]
         )
         configureNavigation()
     }
@@ -98,7 +98,7 @@ class HomeViewController: UIViewController {
                 self.eventTableView.reloadData()
             }
             self.background?.didClickRefreshButton = {
-                getCategories()
+                self.getCategories()
             }
         }
     }
@@ -127,6 +127,15 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
 extension HomeViewController: UITableViewDelegate,UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.viewModel.arrayOfEvents?.count ?? 0
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "EventDetailViewController") as! EventDetailViewController
+        if let eventID = self.viewModel.arrayOfEvents?[indexPath.row].id {
+            vc.eventID = "\(eventID)"
+        }
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

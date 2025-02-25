@@ -24,6 +24,11 @@ extension UIImage {
     static let profileTabIcon = UIImage(named: "Profile")
     //
     static let noDataImage = UIImage(named: "no_data_found")
+    static let arraowBack = UIImage(named: "arrow-left")
+    static let editPencil = UIImage(named: "edit_icon")
+    //
+    static let calendarYellowBG = UIImage(named: "yellow_calendar")
+    static let locationYellowBG = UIImage(named: "yellow_location")
 }
 
 extension UIView {

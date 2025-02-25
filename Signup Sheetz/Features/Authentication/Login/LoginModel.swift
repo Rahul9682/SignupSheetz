@@ -18,7 +18,7 @@ struct LoginModel: Codable {
 // MARK: - DataClass
 class LoginData: Codable {
     let user: LoginUserData?
-    let token: String?
+    var token: String?
 }
 
 // MARK: - User

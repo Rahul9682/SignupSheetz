@@ -10,7 +10,6 @@ import UIKit
 class LoginViewController: UIViewController {
     
     //MARK: - Outlet's
-    
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var emailView: CustomTextFieldView!
     @IBOutlet weak var passwordView: CustomTextFieldView!
@@ -18,7 +17,6 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var signInButtonView: UIView!
     @IBOutlet weak var appleSignInView: UIView!
     @IBOutlet weak var googleSignInView: UIView!
-    
     
     //MARK: - Properties
     var email = ""
@@ -31,7 +29,7 @@ class LoginViewController: UIViewController {
         configureNavigationToHome()
         confiqureUI()
         configureTextFieldView(view: emailView, icon: UIImage.emailIcon, placeholder: "abc@email.com", textfieldType: .loginEmail)
-        configureTextFieldView(view: passwordView, icon: UIImage.passwordIcon, placeholder: "your password", textfieldType: .loginPassword,trailingIcon:UIImage(systemName: "eye.slash"))
+        configureTextFieldView(view: passwordView, icon: UIImage.passwordIcon, placeholder: "Password", textfieldType: .loginPassword,trailingIcon:UIImage(systemName: "eye.slash"))
     }
     
     func configureNavigationToHome() {

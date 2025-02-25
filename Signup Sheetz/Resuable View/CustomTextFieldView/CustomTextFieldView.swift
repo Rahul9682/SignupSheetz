@@ -15,7 +15,7 @@ class CustomTextFieldView: UIView {
     @IBOutlet weak var iconImageView: UIImageView!
     @IBOutlet weak var textField: UITextField!
     @IBOutlet weak var trailingImageView: UIImageView!
-     
+    
     var delegateTextField: DelegateTextField?
     var delegateTextfieldType: TextFieldType?
     
@@ -24,13 +24,13 @@ class CustomTextFieldView: UIView {
         
     }
     
-     func setupView() {
+    func setupView() {
         containerView.layer.cornerRadius = 10
         containerView.layer.borderWidth = 1
         containerView.layer.borderColor = UIColor.lightGray.cgColor
     }
     
-    func configure(icon: UIImage?, placeholder: String, fontWeight: FontManager.FontWeight, fontSize: CGFloat,trailingIcon: UIImage?) {
+    func configure(icon: UIImage?, placeholder: String, fontWeight: FontManager.FontWeight, fontSize: CGFloat,trailingIcon: UIImage?, editable: Bool = true, text: String? = nil) {
         iconImageView.image = icon
         iconImageView.tintColor = UIColor.init(hex:"807A7A")
         
@@ -39,20 +39,28 @@ class CustomTextFieldView: UIView {
         
         textField.placeholder = placeholder
         textField.font = FontManager.customFont(weight: fontWeight, size: fontSize)
+        textField.isUserInteractionEnabled = editable
+        if !editable {
+            textField.layer.opacity = 0.5
+        }
+        if let text = text {
+            textField.text = text
+        }
+        
         switch delegateTextfieldType {
-        case .loginPassword, .signupPassword, .resetPassword, .resetConfirmPassword:
+        case .loginPassword, .signupPassword, .resetPassword, .resetConfirmPassword, .changeNewPassword, .changeOldPassword, .changeConfirmPassword:
             textField.isSecureTextEntry = true
             textField.returnKeyType = .done
-
+            
         case .loginEmail, .signupEmail:
             textField.keyboardType = .emailAddress  //
             textField.autocapitalizationType = .none //
             textField.autocorrectionType = .no  //
             textField.returnKeyType = .next
-        
+            
         case .signupPhoneNumber:
             textField.keyboardType = .phonePad
-
+            
         default:
             textField.returnKeyType = .next
         }
@@ -66,12 +74,11 @@ class CustomTextFieldView: UIView {
     }
     
     @IBAction func showPasswordAction(_ sender: Any) {
-        guard delegateTextfieldType == .loginPassword || delegateTextfieldType == .signupPassword || delegateTextfieldType == .resetPassword || delegateTextfieldType == .resetConfirmPassword else {
-                return
-            }
-            textField.isSecureTextEntry.toggle()
-            let image = textField.isSecureTextEntry ? UIImage(systemName: "eye.slash") : UIImage(systemName: "eye")
-            trailingImageView.image = image
+        guard delegateTextfieldType == .loginPassword || delegateTextfieldType == .signupPassword || delegateTextfieldType == .resetPassword || delegateTextfieldType == .resetConfirmPassword || delegateTextfieldType == .changeOldPassword || delegateTextfieldType == .changeNewPassword || delegateTextfieldType == .changeConfirmPassword else {
+            return
+        }
+        textField.isSecureTextEntry.toggle()
+        let image = textField.isSecureTextEntry ? UIImage(systemName: "eye.slash") : UIImage(systemName: "eye")
+        trailingImageView.image = image
     }
-    
 }

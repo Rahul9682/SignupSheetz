@@ -25,6 +25,10 @@ class ProfileViewController: UIViewController {
         configureUI()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        configureUI()
+    }
+    
     func configureUI() {
         nameContainerView.layer.cornerRadius = 60
         nameContainerView.layer.masksToBounds = true
@@ -40,6 +44,14 @@ class ProfileViewController: UIViewController {
     
     func configureUI(userData: LoginUserData?) {
         nameLabel.text = self.viewModel.getNameLetters(firstName: userData?.firstName ?? "", lastName:  userData?.lastName ?? "")
+    }
+    
+    @IBAction func didClickEditProfile(_ sender: UIButton) {
+        let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storyBoard.instantiateViewController(withIdentifier: "EditProfileViewController") as! EditProfileViewController
+        let userData = LocalStorage.getUserData()?.user
+        vc.userData = userData
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
     //    @IBAction func showMenuAction(_ sender: Any) {
